@@ -1,0 +1,7 @@
+<h1>New Ticket</h1>
+
+<%= render 'form', ticket: @ticket %>
+<%= render 'mapka'%>
+<%= render "events_list", events:Event.all %>
+
+<%= link_to 'Back', tickets_path %>

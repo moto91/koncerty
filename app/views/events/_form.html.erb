@@ -1,0 +1,55 @@
+<%= form_for(@event) do |form| %>
+  <% if @event.errors.any? %>
+  <div id = "error_explanation">
+  <ul>
+  <% @event.errors.full_messages.each do |message| %>
+    <li><%= message %></li>
+    <% end %>
+    </ul>
+    </div>
+    <% end %>
+
+  <div class="field">
+    <%= form.label :artist %>
+    <%= form.text_field :artist %>
+  </div>
+
+  <div class="field">
+    <%= form.label :description %>
+    <%= form.text_area :description %>
+  </div>
+
+  <div class="field">
+  <%= form.label :price_A %>
+  <%= form.text_field :price_A %>
+</div>
+
+<div class="field">
+<%= form.label :price_B %>
+<%= form.text_field :price_B %>
+</div>
+
+<div class="field">
+<%= form.label :price_C %>
+<%= form.text_field :price_C %>
+</div>
+
+<div class="field">
+<%= form.label :price_D %>
+<%= form.text_field :price_D %>
+</div>
+
+<div class="field">
+<%= form.label :price_GC %>
+<%= form.text_field :price_GC %>
+</div>
+
+<div class="field">
+    <%= form.label :event_date %>
+    <%= form.date_field :event_date %>
+  </div>
+ 
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

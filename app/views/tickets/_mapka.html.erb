@@ -1,0 +1,5098 @@
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Venue map</title>
+    <style type="text/css">
+    
+.container {
+    display: grid;
+    grid-template-columns: repeat(25, 20px);
+    grid-template-rows: repeat(25, 20px);
+    text-align: center;
+  }
+    .scene {
+    grid-column-start: 7;
+    grid-column-end: 20;
+    grid-row-start: 1;
+    grid-row-end: 4;
+    background-color: #00008B;
+    color: aliceblue;
+    line-height: 60px;
+    height: 60px;
+  }
+  .GC {
+    grid-column-start: 7;
+    grid-column-end: 20;
+    grid-row-start: 5;
+    grid-row-end: 10;
+    background-color: #FFD700;
+    line-height: 100px;
+    height: 100px;
+  }
+  .board {
+    grid-column-start: 7;
+    grid-column-end: 20;
+    grid-row-start: 10;
+    grid-row-end: 21;
+    background-color: #00BFFF;
+    line-height: 200px;
+    height: 200px;
+  }
+
+  .A-1 {
+    grid-area: 3 / 1 / 4 / 2;
+    background-color: red;
+    margin: 1px 1px;
+  }
+  .A-2 {
+    grid-area: 3 / 2 / 4 / 3;
+    background-color: red;
+    margin: 1px 1px;
+  }
+  .A-3 {
+    grid-area: 3 / 3 / 4 / 4;
+    background-color: red;
+    margin: 1px 1px;
+  }
+  .A-4 {
+    grid-area: 3 / 4 / 4 / 5;
+    background-color: red;
+    margin: 1px 1px;
+  }
+  .A-5 {
+    grid-area: 3 / 5 / 4 / 6;
+    background-color: red;
+    margin: 1px 1px;
+  }
+  .A-6 {
+    grid-area: 4 / 1 / 5 / 2;
+    background-color: red;
+    margin: 1px 1px;
+  }
+  .A-7 {
+    grid-area: 4 / 2 / 5 / 3;
+    background-color: red;
+    margin: 1px 1px;
+  }
+  .A-8 {
+    grid-area: 4 / 3 / 5 / 4;
+    background-color: red;
+    margin: 1px 1px;
+  }
+  .A-9 {
+    grid-area: 4 / 4 / 5 / 5;
+    background-color: red;
+    margin: 1px 1px;
+  }
+  .A-10 {
+    grid-area: 4 / 5 / 5 / 6;
+    background-color: red;
+    margin: 1px 1px;
+  }
+  .A-11 {
+    grid-area: 5 / 1 / 6 / 2;
+    background-color: red;
+    margin: 1px 1px;
+  }
+  .A-12 {
+    grid-area: 5 / 2 / 6 / 3;
+    background-color: red;
+    margin: 1px 1px;
+  }
+  .A-13 {
+    grid-area: 5 / 3 / 6 / 4;
+    background-color: red;
+    margin: 1px 1px;
+  }
+  .A-14 {
+    grid-area: 5 / 4 / 6 / 5;
+    background-color: red;
+    margin: 1px 1px;
+  }
+  .A-15 {
+    grid-area: 5 / 5 / 6 / 6;
+    background-color: red;
+    margin: 1px 1px;
+  }
+  .A-16 {
+    grid-area: 6 / 1 / 7 / 2;
+    background-color: red;
+    margin: 1px 1px;
+  }
+  .A-17 {
+    grid-area: 6 / 2 / 7 / 3;
+    background-color: red;
+    margin: 1px 1px;
+  }
+  .A-18 {
+    grid-area: 6 / 3 / 7 / 4;
+    background-color: red;
+    margin: 1px 1px;
+  }
+  .A-19 {
+    grid-area: 6 / 4 / 7 / 5;
+    background-color: red;
+    margin: 1px 1px;
+  }
+  .A-20 {
+    grid-area: 6 / 5 / 7 / 6;
+    background-color: red;
+    margin: 1px 1px;
+  }
+  .A-21 {
+    grid-area: 7 / 1 / 8 / 2;
+    background-color: red;
+    margin: 1px 1px;
+  }
+  .A-22 {
+    grid-area: 7 / 2 / 8 / 3;
+    background-color: red;
+    margin: 1px 1px;
+  }
+  .A-23 {
+    grid-area: 7 / 3 / 8 / 4;
+    background-color: red;
+    margin: 1px 1px;
+  }
+  .A-24 {
+    grid-area: 7 / 4 / 8 / 5;
+    background-color: red;
+    margin: 1px 1px;
+  }
+  .A-25 {
+    grid-area: 7 / 5 / 8 / 6;
+    background-color: red;
+    margin: 1px 1px;
+  }
+  .A-26 {
+    grid-area: 8 / 1 / 9 / 2;
+    background-color: red;
+    margin: 1px 1px;
+  }
+  .A-27 {
+    grid-area: 8 / 2 / 9 / 3;
+    background-color: red;
+    margin: 1px 1px;
+  }
+  .A-28 {
+    grid-area: 8 / 3 / 9 / 4;
+    background-color: red;
+    margin: 1px 1px;
+  }
+  .A-29 {
+    grid-area: 8 / 4 / 9 / 5;
+    background-color: red;
+    margin: 1px 1px;
+  }
+  .A-30 {
+    grid-area: 8 / 5 / 9 / 6;
+    background-color: red;
+    margin: 1px 1px;
+  }
+  .A-31 {
+    grid-area: 9 / 1 / 10 / 2;
+    background-color: red;
+    margin: 1px 1px;
+  }
+  .A-32 {
+    grid-area: 9 / 2 / 10 / 3;
+    background-color: red;
+    margin: 1px 1px;
+  }
+  .A-33 {
+    grid-area: 9 / 3 / 10 / 4;
+    background-color: red;
+    margin: 1px 1px;
+  }
+  .A-34 {
+    grid-area: 9 / 4 / 10 / 5;
+    background-color: red;
+    margin: 1px 1px;
+  }
+  .A-35 {
+    grid-area: 9 / 5 / 10 / 6;
+    background-color: red;
+    margin: 1px 1px;
+  }
+  .A-36 {
+    grid-area: 3 / 21 / 4 / 22;
+    background-color: red;
+    margin: 1px 1px;
+  }
+  .A-37 {
+    grid-area: 3 / 22 / 4 / 23;
+    background-color: red;
+    margin: 1px 1px;
+  }
+  .A-38 {
+    grid-area: 3 / 23 / 4 / 24;
+    background-color: red;
+    margin: 1px 1px;
+  }
+  .A-39 {
+    grid-area: 3 / 24 / 4 / 25;
+    background-color: red;
+    margin: 1px 1px;
+  }
+  .A-40 {
+    grid-area: 3 / 25 / 4 / 26;
+    background-color: red;
+    margin: 1px 1px;
+  }
+  .A-41 {
+    grid-area: 4 / 21 / 5 / 22;
+    background-color: red;
+    margin: 1px 1px;
+  }
+  .A-42 {
+    grid-area: 4 / 22 / 5 / 23;
+    background-color: red;
+    margin: 1px 1px;
+  }
+  .A-43 {
+    grid-area: 4 / 23 / 5 / 24;
+    background-color: red;
+    margin: 1px 1px;
+  }
+  .A-44 {
+    grid-area: 4 / 24 / 5 / 25;
+    background-color: red;
+    margin: 1px 1px;
+  }
+  .A-45 {
+    grid-area: 4 / 25 / 5 / 26;
+    background-color: red;
+    margin: 1px 1px;
+  }
+  .A-46 {
+    grid-area: 5 / 21 / 6 / 22;
+    background-color: red;
+    margin: 1px 1px;
+  }
+  .A-47 {
+    grid-area: 5 / 22 / 6 / 23;
+    background-color: red;
+    margin: 1px 1px;
+  }
+  .A-48 {
+    grid-area: 5 / 23 / 6 / 24;
+    background-color: red;
+    margin: 1px 1px;
+  }
+  .A-49 {
+    grid-area: 5 / 24 / 6 / 25;
+    background-color: red;
+    margin: 1px 1px;
+  }
+  .A-50 {
+    grid-area: 5 / 25 / 6 / 26;
+    background-color: red;
+    margin: 1px 1px;
+  }
+  .A-51 {
+    grid-area: 6 / 21 / 7 / 22;
+    background-color: red;
+    margin: 1px 1px;
+  }
+  .A-52 {
+    grid-area: 6 / 22 / 7 / 23;
+    background-color: red;
+    margin: 1px 1px;
+  }
+  .A-53 {
+    grid-area: 6 / 23 / 7 / 24;
+    background-color: red;
+    margin: 1px 1px;
+  }
+  .A-54 {
+    grid-area: 6 / 24 / 7 / 25;
+    background-color: red;
+    margin: 1px 1px;
+  }
+  .A-55 {
+    grid-area: 6 / 25 / 7 / 26;
+    background-color: red;
+    margin: 1px 1px;
+  }
+  .A-56 {
+    grid-area: 7 / 21 / 8 / 22;
+    background-color: red;
+    margin: 1px 1px;
+  }
+  .A-57 {
+    grid-area: 7 / 22 / 8 / 23;
+    background-color: red;
+    margin: 1px 1px;
+  }
+  .A-58 {
+    grid-area: 7 / 23 / 8 / 24;
+    background-color: red;
+    margin: 1px 1px;
+  }
+  .A-59 {
+    grid-area: 7 / 24 / 8 / 25;
+    background-color: red;
+    margin: 1px 1px;
+  }
+  .A-60 {
+    grid-area: 7 / 25 / 8 / 26;
+    background-color: red;
+    margin: 1px 1px;
+  }
+  .A-61 {
+    grid-area: 8 / 21 / 9 / 22;
+    background-color: red;
+    margin: 1px 1px;
+  }
+  .A-62 {
+    grid-area: 8 / 22 / 9 / 23;
+    background-color: red;
+    margin: 1px 1px;
+  }
+  .A-63 {
+    grid-area: 8 / 23 / 9 / 24;
+    background-color: red;
+    margin: 1px 1px;
+  }
+  .A-64 {
+    grid-area: 8 / 24 / 9 / 25;
+    background-color: red;
+    margin: 1px 1px;
+  }
+  .A-65 {
+    grid-area: 8 / 25 / 9 / 26;
+    background-color: red;
+    margin: 1px 1px;
+  }
+  .A-66 {
+    grid-area: 9 / 21 / 10 / 22;
+    background-color: red;
+    margin: 1px 1px;
+  }
+  .A-67 {
+    grid-area: 9 / 22 / 10 / 23;
+    background-color: red;
+    margin: 1px 1px;
+  }
+  .A-68 {
+    grid-area: 9 / 23 / 10 / 24;
+    background-color: red;
+    margin: 1px 1px;
+  }
+  .A-69 {
+    grid-area: 9 / 24 / 10 / 25;
+    background-color: red;
+    margin: 1px 1px;
+  }
+  .A-70 {
+    grid-area: 9 / 25 / 10 / 26;
+    background-color: red;
+    margin: 1px 1px;
+  }
+  .B-1 {
+    grid-area: 10 / 1 / 11 / 2;
+    background-color: #00BFFF;
+    margin: 1px 1px;
+  }  
+  .B-2 {
+    grid-area: 10 / 2 / 11 / 3;
+    background-color: #00BFFF;
+    margin: 1px 1px;
+  }
+  .B-3 {
+    grid-area: 10 / 3 / 11 / 4;
+    background-color: #00BFFF;
+    margin: 1px 1px;
+  }
+  .B-4 {
+    grid-area: 10 / 4 / 11 / 5;
+    background-color: #00BFFF;
+    margin: 1px 1px;
+  }
+  .B-5 {
+    grid-area: 10 / 5 / 11 / 6;
+    background-color: #00BFFF;
+    margin: 1px 1px;
+  }
+  .B-6 {
+    grid-area: 11 / 1 / 12 / 2;
+    background-color: #00BFFF;
+    margin: 1px 1px;
+  }  
+  .B-7 {
+    grid-area: 11 / 2 / 12 / 3;
+    background-color: #00BFFF;
+    margin: 1px 1px;
+  }
+  .B-8 {
+    grid-area: 11 / 3 / 12 / 4;
+    background-color: #00BFFF;
+    margin: 1px 1px;
+  }
+  .B-9 {
+    grid-area: 11 / 4 / 12 / 5;
+    background-color: #00BFFF;
+    margin: 1px 1px;
+  }
+  .B-10 {
+    grid-area: 11 / 5 / 12 / 6;
+    background-color: #00BFFF;
+    margin: 1px 1px;
+  }
+  .B-11 {
+    grid-area: 12 / 1 / 13 / 2;
+    background-color: #00BFFF;
+    margin: 1px 1px;
+  }  
+  .B-12 {
+    grid-area: 12 / 2 / 13 / 3;
+    background-color: #00BFFF;
+    margin: 1px 1px;
+  }
+  .B-13 {
+    grid-area: 12 / 3 / 13 / 4;
+    background-color: #00BFFF;
+    margin: 1px 1px;
+  }
+  .B-14 {
+    grid-area: 12 / 4 / 13 / 5;
+    background-color: #00BFFF;
+    margin: 1px 1px;
+  }
+  .B-15 {
+    grid-area: 12 / 5 / 13 / 6;
+    background-color: #00BFFF;
+    margin: 1px 1px;
+  }
+  .B-16 {
+    grid-area: 13 / 1 / 14 / 2;
+    background-color: #00BFFF;
+    margin: 1px 1px;
+  }  
+  .B-17 {
+    grid-area: 13 / 2 / 14 / 3;
+    background-color: #00BFFF;
+    margin: 1px 1px;
+  }
+  .B-18 {
+    grid-area: 13 / 3 / 14 / 4;
+    background-color: #00BFFF;
+    margin: 1px 1px;
+  }
+  .B-19 {
+    grid-area: 13 / 4 / 14 / 5;
+    background-color: #00BFFF;
+    margin: 1px 1px;
+  }
+  .B-20 {
+    grid-area: 13 / 5 / 14 / 6;
+    background-color: #00BFFF;
+    margin: 1px 1px;
+  }
+  .B-21 {
+    grid-area: 14 / 1 / 15 / 2;
+    background-color: #00BFFF;
+    margin: 1px 1px;
+  }  
+  .B-22 {
+    grid-area: 14 / 2 / 15 / 3;
+    background-color: #00BFFF;
+    margin: 1px 1px;
+  }
+  .B-23 {
+    grid-area: 14 / 3 / 15 / 4;
+    background-color: #00BFFF;
+    margin: 1px 1px;
+  }
+  .B-24 {
+    grid-area: 14 / 4 / 15 / 5;
+    background-color: #00BFFF;
+    margin: 1px 1px;
+  }
+  .B-25 {
+    grid-area: 14 / 5 / 15 / 6;
+    background-color: #00BFFF;
+    margin: 1px 1px;
+  }
+  .B-26 {
+    grid-area: 15 / 1 / 16 / 2;
+    background-color: #00BFFF;
+    margin: 1px 1px;
+  }  
+  .B-27 {
+    grid-area: 15 / 2 / 16 / 3;
+    background-color: #00BFFF;
+    margin: 1px 1px;
+  }
+  .B-28 {
+    grid-area: 15 / 3 / 16 / 4;
+    background-color: #00BFFF;
+    margin: 1px 1px;
+  }
+  .B-29 {
+    grid-area: 15 / 4 / 16 / 5;
+    background-color: #00BFFF;
+    margin: 1px 1px;
+  }
+  .B-30 {
+    grid-area: 15 / 5 / 16 / 6;
+    background-color: #00BFFF;
+    margin: 1px 1px;
+  }
+  .B-31 {
+    grid-area: 16 / 1 / 17 / 2;
+    background-color: #00BFFF;
+    margin: 1px 1px;
+  }  
+  .B-32 {
+    grid-area: 16 / 2 / 17 / 3;
+    background-color: #00BFFF;
+    margin: 1px 1px;
+  }
+  .B-33 {
+    grid-area: 16 / 3 / 17 / 4;
+    background-color: #00BFFF;
+    margin: 1px 1px;
+  }
+  .B-34 {
+    grid-area: 16 / 4 / 17 / 5;
+    background-color: #00BFFF;
+    margin: 1px 1px;
+  }
+  .B-35 {
+    grid-area: 16 / 5 / 17 / 6;
+    background-color: #00BFFF;
+    margin: 1px 1px;
+  }
+  .B-36 {
+    grid-area: 17 / 1 / 18 / 2;
+    background-color: #00BFFF;
+    margin: 1px 1px;
+  }  
+  .B-37 {
+    grid-area: 17 / 2 / 18 / 3;
+    background-color: #00BFFF;
+    margin: 1px 1px;
+  }
+  .B-38 {
+    grid-area: 17 / 3 / 18 / 4;
+    background-color: #00BFFF;
+    margin: 1px 1px;
+  }
+  .B-39 {
+    grid-area: 17 / 4 / 18 / 5;
+    background-color: #00BFFF;
+    margin: 1px 1px;
+  }
+  .B-40 {
+    grid-area: 17 / 5 / 18 / 6;
+    background-color: #00BFFF;
+    margin: 1px 1px;
+  }
+  .B-41 {
+    grid-area: 18 / 1 / 19 / 2;
+    background-color: #00BFFF;
+    margin: 1px 1px;
+  }  
+  .B-42 {
+    grid-area: 18 / 2 / 19 / 3;
+    background-color: #00BFFF;
+    margin: 1px 1px;
+  }
+  .B-43 {
+    grid-area: 18 / 3 / 19 / 4;
+    background-color: #00BFFF;
+    margin: 1px 1px;
+  }
+  .B-44 {
+    grid-area: 18 / 4 / 19 / 5;
+    background-color: #00BFFF;
+    margin: 1px 1px;
+  }
+  .B-45 {
+    grid-area: 18 / 5 / 19 / 6;
+    background-color: #00BFFF;
+    margin: 1px 1px;
+  }
+  .B-46 {
+    grid-area: 19 / 1 / 20 / 2;
+    background-color: #00BFFF;
+    margin: 1px 1px;
+  }  
+  .B-47 {
+    grid-area: 19 / 2 / 20 / 3;
+    background-color: #00BFFF;
+    margin: 1px 1px;
+  }
+  .B-48 {
+    grid-area: 19 / 3 / 20 / 4;
+    background-color: #00BFFF;
+    margin: 1px 1px;
+  }
+  .B-49 {
+    grid-area: 19 / 4 / 20 / 5;
+    background-color: #00BFFF;
+    margin: 1px 1px;
+  }
+  .B-50 {
+    grid-area: 19 / 5 / 20 / 6;
+    background-color: #00BFFF;
+    margin: 1px 1px;
+  }
+  .B-51 {
+    grid-area: 10 / 21 / 11 / 22;
+    background-color: #00BFFF;
+    margin: 1px 1px;
+  }  
+  .B-52 {
+    grid-area: 10 / 22 / 11 / 23;
+    background-color: #00BFFF;
+    margin: 1px 1px;
+  }
+  .B-53 {
+    grid-area: 10 / 23 / 11 / 24;
+    background-color: #00BFFF;
+    margin: 1px 1px;
+  }
+  .B-54 {
+    grid-area: 10 / 24 / 11 / 25;
+    background-color: #00BFFF;
+    margin: 1px 1px;
+  }
+  .B-55 {
+    grid-area: 10 / 25 / 11 / 26;
+    background-color: #00BFFF;
+    margin: 1px 1px;
+  }
+  .B-56 {
+    grid-area: 11 / 21 / 12 / 22;
+    background-color: #00BFFF;
+    margin: 1px 1px;
+  }  
+  .B-57 {
+    grid-area: 11 / 22 / 12 / 23;
+    background-color: #00BFFF;
+    margin: 1px 1px;
+  }
+  .B-58 {
+    grid-area: 11 / 23 / 12 / 24;
+    background-color: #00BFFF;
+    margin: 1px 1px;
+  }
+  .B-59 {
+    grid-area: 11 / 24 / 12 / 25;
+    background-color: #00BFFF;
+    margin: 1px 1px;
+  }
+  .B-60 {
+    grid-area: 11 / 25 / 12 / 26;
+    background-color: #00BFFF;
+    margin: 1px 1px;
+  }
+  .B-61 {
+    grid-area: 12 / 21 / 13 / 22;
+    background-color: #00BFFF;
+    margin: 1px 1px;
+  }  
+  .B-62 {
+    grid-area: 12 / 22 / 13 / 23;
+    background-color: #00BFFF;
+    margin: 1px 1px;
+  }
+  .B-63 {
+    grid-area: 12 / 23 / 13 / 24;
+    background-color: #00BFFF;
+    margin: 1px 1px;
+  }
+  .B-64 {
+    grid-area: 12 / 24 / 13 / 25;
+    background-color: #00BFFF;
+    margin: 1px 1px;
+  }
+  .B-65 {
+    grid-area: 12 / 25 / 13 / 26;
+    background-color: #00BFFF;
+    margin: 1px 1px;
+  }
+  .B-66 {
+    grid-area: 13 / 21 / 14 / 22;
+    background-color: #00BFFF;
+    margin: 1px 1px;
+  }  
+  .B-67 {
+    grid-area: 13 / 22 / 14 / 23;
+    background-color: #00BFFF;
+    margin: 1px 1px;
+  }
+  .B-68 {
+    grid-area: 13 / 23 / 14 / 24;
+    background-color: #00BFFF;
+    margin: 1px 1px;
+  }
+  .B-69 {
+    grid-area: 13 / 24 / 14 / 25;
+    background-color: #00BFFF;
+    margin: 1px 1px;
+  }
+  .B-70 {
+    grid-area: 13 / 25 / 14 / 26;
+    background-color: #00BFFF;
+    margin: 1px 1px;
+  }
+  .B-71 {
+    grid-area: 14 / 21 / 15 / 22;
+    background-color: #00BFFF;
+    margin: 1px 1px;
+  }  
+  .B-72 {
+    grid-area: 14 / 22 / 15 / 23;
+    background-color: #00BFFF;
+    margin: 1px 1px;
+  }
+  .B-73 {
+    grid-area: 14 / 23 / 15 / 24;
+    background-color: #00BFFF;
+    margin: 1px 1px;
+  }
+  .B-74 {
+    grid-area: 14 / 24 / 15 / 25;
+    background-color: #00BFFF;
+    margin: 1px 1px;
+  }
+  .B-75 {
+    grid-area: 14 / 25 / 15 / 26;
+    background-color: #00BFFF;
+    margin: 1px 1px;
+  }
+  .B-76 {
+    grid-area: 15 / 21 / 16 / 22;
+    background-color: #00BFFF;
+    margin: 1px 1px;
+  }  
+  .B-77 {
+    grid-area: 15 / 22 / 16 / 23;
+    background-color: #00BFFF;
+    margin: 1px 1px;
+  }
+  .B-78 {
+    grid-area: 15 / 23 / 16 / 24;
+    background-color: #00BFFF;
+    margin: 1px 1px;
+  }
+  .B-79 {
+    grid-area: 15 / 24 / 16 / 25;
+    background-color: #00BFFF;
+    margin: 1px 1px;
+  }
+  .B-80 {
+    grid-area: 15 / 25 / 16 / 26;
+    background-color: #00BFFF;
+    margin: 1px 1px;
+  }
+  .B-81 {
+    grid-area: 16 / 21 / 17 / 22;
+    background-color: #00BFFF;
+    margin: 1px 1px;
+  }  
+  .B-82 {
+    grid-area: 16 / 22 / 17 / 23;
+    background-color: #00BFFF;
+    margin: 1px 1px;
+  }
+  .B-83 {
+    grid-area: 16 / 23 / 17 / 24;
+    background-color: #00BFFF;
+    margin: 1px 1px;
+  }
+  .B-84 {
+    grid-area: 16 / 24 / 17 / 25;
+    background-color: #00BFFF;
+    margin: 1px 1px;
+  }
+  .B-85 {
+    grid-area: 16 / 25 / 17 / 26;
+    background-color: #00BFFF;
+    margin: 1px 1px;
+  }
+  .B-86 {
+    grid-area: 17 / 21 / 18 / 22;
+    background-color: #00BFFF;
+    margin: 1px 1px;
+  }  
+  .B-87 {
+    grid-area: 17 / 22 / 18 / 23;
+    background-color: #00BFFF;
+    margin: 1px 1px;
+  }
+  .B-88 {
+    grid-area: 17 / 23 / 18 / 24;
+    background-color: #00BFFF;
+    margin: 1px 1px;
+  }
+  .B-89 {
+    grid-area: 17 / 24 / 18 / 25;
+    background-color: #00BFFF;
+    margin: 1px 1px;
+  }
+  .B-90 {
+    grid-area: 17 / 25 / 18 / 26;
+    background-color: #00BFFF;
+    margin: 1px 1px;
+  }
+  .B-91 {
+    grid-area: 18 / 21 / 19 / 22;
+    background-color: #00BFFF;
+    margin: 1px 1px;
+  }  
+  .B-92 {
+    grid-area: 18 / 22 / 19 / 23;
+    background-color: #00BFFF;
+    margin: 1px 1px;
+  }
+  .B-93 {
+    grid-area: 18 / 23 / 19 / 24;
+    background-color: #00BFFF;
+    margin: 1px 1px;
+  }
+  .B-94 {
+    grid-area: 18 / 24 / 19 / 25;
+    background-color: #00BFFF;
+    margin: 1px 1px;
+  }
+  .B-95 {
+    grid-area: 18 / 25 / 19 / 26;
+    background-color: #00BFFF;
+    margin: 1px 1px;
+  }
+  .B-96 {
+    grid-area: 19 / 21 / 20 / 22;
+    background-color: #00BFFF;
+    margin: 1px 1px;
+  }  
+  .B-97 {
+    grid-area: 19 / 22 / 20 / 23;
+    background-color: #00BFFF;
+    margin: 1px 1px;
+  }
+  .B-98 {
+    grid-area: 19 / 23 / 20 / 24;
+    background-color: #00BFFF;
+    margin: 1px 1px;
+  }
+  .B-99 {
+    grid-area: 19 / 24 / 20 / 25;
+    background-color: #00BFFF;
+    margin: 1px 1px;
+  }
+  .B-100 {
+    grid-area: 19 / 25 / 20 / 26;
+    background-color: #00BFFF;
+    margin: 1px 1px;
+  }
+  .D-1 {
+    grid-area: 21 / 1 / 22 / 2;
+    background-color: #FF00FF;
+    margin: 1px 1px;
+  } 
+  .D-2 {
+    grid-area: 21 / 2 / 22 / 3;
+    background-color: #FF00FF;
+    margin: 1px 1px;
+  } 
+  .D-3 {
+    grid-area: 21 / 3 / 22 / 4;
+    background-color: #FF00FF;
+    margin: 1px 1px;
+  } 
+  .D-4 {
+    grid-area: 21 / 4 / 22 / 5;
+    background-color: #FF00FF;
+    margin: 1px 1px;
+  } 
+  .D-5 {
+    grid-area: 21 / 5 / 22 / 6;
+    background-color: #FF00FF;
+    margin: 1px 1px;
+  } 
+  .D-6 {
+    grid-area: 21 / 6 / 22 / 7;
+    background-color: #FF00FF;
+    margin: 1px 1px;
+  } 
+  .D-7 {
+    grid-area: 22 / 1 / 23 / 2;
+    background-color: #FF00FF;
+    margin: 1px 1px;
+  } 
+  .D-8 {
+    grid-area: 22 / 2 / 23 / 3;
+    background-color: #FF00FF;
+    margin: 1px 1px;
+  } 
+  .D-9 {
+    grid-area: 22 / 3 / 23 / 4;
+    background-color: #FF00FF;
+    margin: 1px 1px;
+  } 
+  .D-10 {
+    grid-area: 22 / 4 / 23 / 5;
+    background-color: #FF00FF;
+    margin: 1px 1px;
+  } 
+  .D-11 {
+    grid-area: 22 / 5 / 23 / 6;
+    background-color: #FF00FF;
+    margin: 1px 1px;
+  } 
+  .D-12 {
+    grid-area: 22 / 6 / 23 / 7;
+    background-color: #FF00FF;
+    margin: 1px 1px;
+  } 
+  .D-13 {
+    grid-area: 23 / 1 / 24 / 2;
+    background-color: #FF00FF;
+    margin: 1px 1px;
+  } 
+  .D-14 {
+    grid-area: 23 / 2 / 24 / 3;
+    background-color: #FF00FF;
+    margin: 1px 1px;
+  } 
+  .D-15 {
+    grid-area: 23 / 3 / 24 / 4;
+    background-color: #FF00FF;
+    margin: 1px 1px;
+  } 
+  .D-16 {
+    grid-area: 23 / 4 / 24 / 5;
+    background-color: #FF00FF;
+    margin: 1px 1px;
+  } 
+  .D-17 {
+    grid-area: 23 / 5 / 24 / 6;
+    background-color: #FF00FF;
+    margin: 1px 1px;
+  } 
+  .D-18 {
+    grid-area: 23 / 6 / 24 / 7;
+    background-color: #FF00FF;
+    margin: 1px 1px;
+  }
+  .D-19 {
+    grid-area: 24 / 1 / 25 / 2;
+    background-color: #FF00FF;
+    margin: 1px 1px;
+  } 
+  .D-20 {
+    grid-area: 24 / 2 / 25 / 3;
+    background-color: #FF00FF;
+    margin: 1px 1px;
+  } 
+  .D-21 {
+    grid-area: 24 / 3 / 25 / 4;
+    background-color: #FF00FF;
+    margin: 1px 1px;
+  } 
+  .D-22 {
+    grid-area: 24 / 4 / 25 / 5;
+    background-color: #FF00FF;
+    margin: 1px 1px;
+  } 
+  .D-23 {
+    grid-area: 24 / 5 / 25 / 6;
+    background-color: #FF00FF;
+    margin: 1px 1px;
+  } 
+  .D-24 {
+    grid-area: 24 / 6 / 25 / 7;
+    background-color: #FF00FF;
+    margin: 1px 1px;
+  }
+  .D-25 {
+    grid-area: 25 / 1 / 26 / 2;
+    background-color: #FF00FF;
+    margin: 1px 1px;
+  } 
+  .D-26 {
+    grid-area: 25 / 2 / 26 / 3;
+    background-color: #FF00FF;
+    margin: 1px 1px;
+  } 
+  .D-27 {
+    grid-area: 25 / 3 / 26 / 4;
+    background-color: #FF00FF;
+    margin: 1px 1px;
+  } 
+  .D-28 {
+    grid-area: 25 / 4 / 26 / 5;
+    background-color: #FF00FF;
+    margin: 1px 1px;
+  } 
+  .D-29 {
+    grid-area: 25 / 5 / 26 / 6;
+    background-color: #FF00FF;
+    margin: 1px 1px;
+  } 
+  .D-30 {
+    grid-area: 25 / 6 / 26 / 7;
+    background-color: #FF00FF;
+    margin: 1px 1px;
+  }
+  .D-31 {
+    grid-area: 21 / 20 / 22 / 21;
+    background-color: #FF00FF;
+    margin: 1px 1px;
+  } 
+  .D-32 {
+    grid-area: 21 / 21 / 22 / 22;
+    background-color: #FF00FF;
+    margin: 1px 1px;
+  } 
+  .D-33 {
+    grid-area: 21 / 22 / 22 / 23;
+    background-color: #FF00FF;
+    margin: 1px 1px;
+  } 
+  .D-34 {
+    grid-area: 21 / 23 / 22 / 24;
+    background-color: #FF00FF;
+    margin: 1px 1px;
+  } 
+  .D-35 {
+    grid-area: 21 / 24 / 22 / 25;
+    background-color: #FF00FF;
+    margin: 1px 1px;
+  } 
+  .D-36 {
+    grid-area: 21 / 25 / 22 / 26;
+    background-color: #FF00FF;
+    margin: 1px 1px;
+  } 
+  .D-37 {
+    grid-area: 22 / 20 / 23 / 21;
+    background-color: #FF00FF;
+    margin: 1px 1px;
+  } 
+  .D-38 {
+    grid-area: 22 / 21 / 23 / 22;
+    background-color: #FF00FF;
+    margin: 1px 1px;
+  } 
+  .D-39 {
+    grid-area: 22 / 22 / 23 / 23;
+    background-color: #FF00FF;
+    margin: 1px 1px;
+  } 
+  .D-40 {
+    grid-area: 22 / 23 / 23 / 24;
+    background-color: #FF00FF;
+    margin: 1px 1px;
+  } 
+  .D-41 {
+    grid-area: 22 / 24 / 23 / 25;
+    background-color: #FF00FF;
+    margin: 1px 1px;
+  } 
+  .D-42 {
+    grid-area: 22 / 25 / 23 / 26;
+    background-color: #FF00FF;
+    margin: 1px 1px;
+  } 
+  .D-43 {
+    grid-area: 23 / 20 / 24 / 21;
+    background-color: #FF00FF;
+    margin: 1px 1px;
+  } 
+  .D-44 {
+    grid-area: 23 / 21 / 24 / 22;
+    background-color: #FF00FF;
+    margin: 1px 1px;
+  } 
+  .D-45 {
+    grid-area: 23 / 22 / 24 / 23;
+    background-color: #FF00FF;
+    margin: 1px 1px;
+  } 
+  .D-46 {
+    grid-area: 23 / 23 / 24 / 24;
+    background-color: #FF00FF;
+    margin: 1px 1px;
+  } 
+  .D-47 {
+    grid-area: 23 / 24 / 24 / 25;
+    background-color: #FF00FF;
+    margin: 1px 1px;
+  } 
+  .D-48 {
+    grid-area: 23 / 25 / 24 / 26;
+    background-color: #FF00FF;
+    margin: 1px 1px;
+  }
+  .D-49 {
+    grid-area: 24 / 20 / 25 / 21;
+    background-color: #FF00FF;
+    margin: 1px 1px;
+  } 
+  .D-50 {
+    grid-area: 24 / 21 / 25 / 22;
+    background-color: #FF00FF;
+    margin: 1px 1px;
+  } 
+  .D-51 {
+    grid-area: 24 / 22 / 25 / 23;
+    background-color: #FF00FF;
+    margin: 1px 1px;
+  } 
+  .D-52 {
+    grid-area: 24 / 23 / 25 / 24;
+    background-color: #FF00FF;
+    margin: 1px 1px;
+  } 
+  .D-53 {
+    grid-area: 24 / 24 / 25 / 25;
+    background-color: #FF00FF;
+    margin: 1px 1px;
+  } 
+  .D-54 {
+    grid-area: 24 / 25 / 25 / 26;
+    background-color: #FF00FF;
+    margin: 1px 1px;
+  }
+  .D-55 {
+    grid-area: 25 / 20 / 26 / 21;
+    background-color: #FF00FF;
+    margin: 1px 1px;
+  } 
+  .D-56 {
+    grid-area: 25 / 21 / 26 / 22;
+    background-color: #FF00FF;
+    margin: 1px 1px;
+  } 
+  .D-57 {
+    grid-area: 25 / 22 / 26 / 23;
+    background-color: #FF00FF;
+    margin: 1px 1px;
+  } 
+  .D-58 {
+    grid-area: 25 / 23 / 26 / 24;
+    background-color: #FF00FF;
+    margin: 1px 1px;
+  } 
+  .D-59 {
+    grid-area: 25 / 24 / 26 / 25;
+    background-color: #FF00FF;
+    margin: 1px 1px;
+  } 
+  .D-60 {
+    grid-area: 25 / 25 / 26 / 26;
+    background-color: #FF00FF;
+    margin: 1px 1px;
+  }
+  .C-1 {
+    grid-area: 21 / 7 / 22 / 8;
+    background-color: #228B22;
+    margin: 1px 1px;
+  }
+  .C-2 {
+    grid-area: 21 / 8 / 22 / 9;
+    background-color: #228B22;
+    margin: 1px 1px;
+  }
+  .C-3 {
+    grid-area: 21 / 9 / 22 / 10;
+    background-color: #228B22;
+    margin: 1px 1px;
+  }
+  .C-4 {
+    grid-area: 21 / 10 / 22 / 11;
+    background-color: #228B22;
+    margin: 1px 1px;
+  }
+  .C-5 {
+    grid-area: 21 / 11 / 22 / 12;
+    background-color: #228B22;
+    margin: 1px 1px;
+  }
+  .C-6 {
+    grid-area: 21 / 12 / 22 / 13;
+    background-color: #228B22;
+    margin: 1px 1px;
+  }
+  .C-7 {
+    grid-area: 21 / 13 / 22 / 14;
+    background-color: #228B22;
+    margin: 1px 1px;
+  }
+  .C-8 {
+    grid-area: 21 / 14 / 22 / 15;
+    background-color: #228B22;
+    margin: 1px 1px;
+  }
+  .C-9 {
+    grid-area: 21 / 15 / 22 / 16;
+    background-color: #228B22;
+    margin: 1px 1px;
+  }
+  .C-10 {
+    grid-area: 21 / 16 / 22 / 17;
+    background-color: #228B22;
+    margin: 1px 1px;
+  }
+  .C-11 {
+    grid-area: 21 / 17 / 22 / 18;
+    background-color: #228B22;
+    margin: 1px 1px;
+  }
+  .C-12 {
+    grid-area: 21 / 18 / 22 / 19;
+    background-color: #228B22;
+    margin: 1px 1px;
+  }
+  .C-13 {
+    grid-area: 21 / 19 / 22 / 20;
+    background-color: #228B22;
+    margin: 1px 1px;
+  }
+  .C-14 {
+    grid-area: 22 / 7 / 23 / 8;
+    background-color: #228B22;
+    margin: 1px 1px;
+  }
+  .C-15 {
+    grid-area: 22 / 8 / 23 / 9;
+    background-color: #228B22;
+    margin: 1px 1px;
+  }
+  .C-16 {
+    grid-area: 22 / 9 / 23 / 10;
+    background-color: #228B22;
+    margin: 1px 1px;
+  }
+  .C-17 {
+    grid-area: 22 / 10 / 23 / 11;
+    background-color: #228B22;
+    margin: 1px 1px;
+  }
+  .C-18 {
+    grid-area: 22 / 11 / 23 / 12;
+    background-color: #228B22;
+    margin: 1px 1px;
+  }
+  .C-19 {
+    grid-area: 22 / 12 / 23 / 13;
+    background-color: #228B22;
+    margin: 1px 1px;
+  }
+  .C-20 {
+    grid-area: 22 / 13 / 23 / 14;
+    background-color: #228B22;
+    margin: 1px 1px;
+  }
+  .C-21 {
+    grid-area: 22 / 14 / 23 / 15;
+    background-color: #228B22;
+    margin: 1px 1px;
+  }
+  .C-22 {
+    grid-area: 22 / 15 / 23 / 16;
+    background-color: #228B22;
+    margin: 1px 1px;
+  }
+  .C-23 {
+    grid-area: 22 / 16 / 23 / 17;
+    background-color: #228B22;
+    margin: 1px 1px;
+  }
+  .C-24 {
+    grid-area: 22 / 17 / 23 / 18;
+    background-color: #228B22;
+    margin: 1px 1px;
+  }
+  .C-25 {
+    grid-area: 22 / 18 / 23 / 19;
+    background-color: #228B22;
+    margin: 1px 1px;
+  }
+  .C-26 {
+    grid-area: 22 / 19 / 23 / 20;
+    background-color: #228B22;
+    margin: 1px 1px;
+  }
+  .C-27 {
+    grid-area: 23 / 7 / 24 / 8;
+    background-color: #228B22;
+    margin: 1px 1px;
+  }
+  .C-28 {
+    grid-area: 23 / 8 / 24 / 9;
+    background-color: #228B22;
+    margin: 1px 1px;
+  }
+  .C-29 {
+    grid-area: 23 / 9 / 24 / 10;
+    background-color: #228B22;
+    margin: 1px 1px;
+  }
+  .C-30 {
+    grid-area: 23 / 10 / 24 / 11;
+    background-color: #228B22;
+    margin: 1px 1px;
+  }
+  .C-31 {
+    grid-area: 23 / 11 / 24 / 12;
+    background-color: #228B22;
+    margin: 1px 1px;
+  }
+  .C-32 {
+    grid-area: 23 / 12 / 24 / 13;
+    background-color: #228B22;
+    margin: 1px 1px;
+  }
+  .C-33 {
+    grid-area: 23 / 13 / 24 / 14;
+    background-color: #228B22;
+    margin: 1px 1px;
+  }
+  .C-34 {
+    grid-area: 23 / 14 / 24 / 15;
+    background-color: #228B22;
+    margin: 1px 1px;
+  }
+  .C-35 {
+    grid-area: 23 / 15 / 24 / 16;
+    background-color: #228B22;
+    margin: 1px 1px;
+  }
+  .C-36 {
+    grid-area: 23 / 16 / 24 / 17;
+    background-color: #228B22;
+    margin: 1px 1px;
+  }
+  .C-37 {
+    grid-area: 23 / 17 / 24 / 18;
+    background-color: #228B22;
+    margin: 1px 1px;
+  }
+  .C-38 {
+    grid-area: 23 / 18 / 24 / 19;
+    background-color: #228B22;
+    margin: 1px 1px;
+  }
+  .C-39 {
+    grid-area: 23 / 19 / 24 / 20;
+    background-color: #228B22;
+    margin: 1px 1px;
+  }
+  .C-40 {
+    grid-area: 24 / 7 / 25 / 8;
+    background-color: #228B22;
+    margin: 1px 1px;
+  }
+  .C-41 {
+    grid-area: 24 / 8 / 25 / 9;
+    background-color: #228B22;
+    margin: 1px 1px;
+  }
+  .C-42 {
+    grid-area: 24 / 9 / 25 / 10;
+    background-color: #228B22;
+    margin: 1px 1px;
+  }
+  .C-43 {
+    grid-area: 24 / 10 / 25 / 11;
+    background-color: #228B22;
+    margin: 1px 1px;
+  }
+  .C-44 {
+    grid-area: 24 / 11 / 25 / 12;
+    background-color: #228B22;
+    margin: 1px 1px;
+  }
+  .C-45 {
+    grid-area: 24 / 12 / 25 / 13;
+    background-color: #228B22;
+    margin: 1px 1px;
+  }
+  .C-46 {
+    grid-area: 24 / 13 / 25 / 14;
+    background-color: #228B22;
+    margin: 1px 1px;
+  }
+  .C-47 {
+    grid-area: 24 / 14 / 25 / 15;
+    background-color: #228B22;
+    margin: 1px 1px;
+  }
+  .C-48 {
+    grid-area: 24 / 15 / 25 / 16;
+    background-color: #228B22;
+    margin: 1px 1px;
+  }
+  .C-49 {
+    grid-area: 24 / 16 / 25 / 17;
+    background-color: #228B22;
+    margin: 1px 1px;
+  }
+  .C-50 {
+    grid-area: 24 / 17 / 25 / 18;
+    background-color: #228B22;
+    margin: 1px 1px;
+  }
+  .C-51 {
+    grid-area: 24 / 18 / 25 / 19;
+    background-color: #228B22;
+    margin: 1px 1px;
+  }
+  .C-52 {
+    grid-area: 24 / 19 / 25 / 20;
+    background-color: #228B22;
+    margin: 1px 1px;
+  }
+  .C-53 {
+    grid-area: 25 / 7 / 26 / 8;
+    background-color: #228B22;
+    margin: 1px 1px;
+  }
+  .C-54 {
+    grid-area: 25 / 8 / 26 / 9;
+    background-color: #228B22;
+    margin: 1px 1px;
+  }
+  .C-55 {
+    grid-area: 25 / 9 / 26 / 10;
+    background-color: #228B22;
+    margin: 1px 1px;
+  }
+  .C-56 {
+    grid-area: 25 / 10 / 26 / 11;
+    background-color: #228B22;
+    margin: 1px 1px;
+  }
+  .C-57 {
+    grid-area: 25 / 11 / 26 / 12;
+    background-color: #228B22;
+    margin: 1px 1px;
+  }
+  .C-58 {
+    grid-area: 25 / 12 / 26 / 13;
+    background-color: #228B22;
+    margin: 1px 1px;
+  }
+  .C-59 {
+    grid-area: 25 / 13 / 26 / 14;
+    background-color: #228B22;
+    margin: 1px 1px;
+  }
+  .C-60 {
+    grid-area: 25 / 14 / 26 / 15;
+    background-color: #228B22;
+    margin: 1px 1px;
+  }
+  .C-61 {
+    grid-area: 25 / 15 / 26 / 16;
+    background-color: #228B22;
+    margin: 1px 1px;
+  }
+  .C-62 {
+    grid-area: 25 / 16 / 26 / 17;
+    background-color: #228B22;
+    margin: 1px 1px;
+  }
+  .C-63 {
+    grid-area: 25 / 17 / 26 / 18;
+    background-color: #228B22;
+    margin: 1px 1px;
+  }
+  .C-64 {
+    grid-area: 25 / 18 / 26 / 19;
+    background-color: #228B22;
+    margin: 1px 1px;
+  }
+  .C-65 {
+    grid-area: 25 / 19 / 26 / 20;
+    background-color: #228B22;
+    margin: 1px 1px;
+  }
+
+ .tooltiptext {
+  visibility: hidden;
+  width: 50px;
+  background-color: black;
+  color: #fff;
+  text-align: center;
+  border-radius: 6px;
+  padding: 1px 0;
+
+  /* Position the tooltip */
+  position: absolute;
+}
+
+.A-1:hover .tooltiptext {
+  visibility: visible;
+}
+.A-2:hover .tooltiptext {
+  visibility: visible;
+}
+.A-3:hover .tooltiptext {
+  visibility: visible;
+}
+.A-4:hover .tooltiptext {
+  visibility: visible;
+}
+.A-5:hover .tooltiptext {
+  visibility: visible;
+}
+.A-6:hover .tooltiptext {
+  visibility: visible;
+}
+.A-7:hover .tooltiptext {
+  visibility: visible;
+}
+.A-8:hover .tooltiptext {
+  visibility: visible;
+}
+.A-9:hover .tooltiptext {
+  visibility: visible;
+}
+.A-10:hover .tooltiptext {
+  visibility: visible;
+}
+.A-11:hover .tooltiptext {
+  visibility: visible;
+}
+.A-12:hover .tooltiptext {
+  visibility: visible;
+}
+.A-13:hover .tooltiptext {
+  visibility: visible;
+}
+.A-14:hover .tooltiptext {
+  visibility: visible;
+}
+.A-15:hover .tooltiptext {
+  visibility: visible;
+}
+.A-16:hover .tooltiptext {
+  visibility: visible;
+}
+.A-17:hover .tooltiptext {
+  visibility: visible;
+}
+.A-18:hover .tooltiptext {
+  visibility: visible;
+}
+.A-19:hover .tooltiptext {
+  visibility: visible;
+}
+.A-20:hover .tooltiptext {
+  visibility: visible;
+}
+.A-21:hover .tooltiptext {
+  visibility: visible;
+}
+.A-22:hover .tooltiptext {
+  visibility: visible;
+}
+.A-23:hover .tooltiptext {
+  visibility: visible;
+}
+.A-24:hover .tooltiptext {
+  visibility: visible;
+}
+.A-25:hover .tooltiptext {
+  visibility: visible;
+}
+.A-26:hover .tooltiptext {
+  visibility: visible;
+}
+.A-27:hover .tooltiptext {
+  visibility: visible;
+}
+.A-28:hover .tooltiptext {
+  visibility: visible;
+}
+.A-29:hover .tooltiptext {
+  visibility: visible;
+}
+.A-30:hover .tooltiptext {
+  visibility: visible;
+}
+.A-31:hover .tooltiptext {
+  visibility: visible;
+}
+.A-32:hover .tooltiptext {
+  visibility: visible;
+}
+.A-33:hover .tooltiptext {
+  visibility: visible;
+}
+.A-34:hover .tooltiptext {
+  visibility: visible;
+}
+.A-35:hover .tooltiptext {
+  visibility: visible;
+}
+.A-36:hover .tooltiptext {
+  visibility: visible;
+}
+.A-37:hover .tooltiptext {
+  visibility: visible;
+}
+.A-38:hover .tooltiptext {
+  visibility: visible;
+}
+.A-39:hover .tooltiptext {
+  visibility: visible;
+}
+.A-40:hover .tooltiptext {
+  visibility: visible;
+}
+.A-41:hover .tooltiptext {
+  visibility: visible;
+}
+.A-42:hover .tooltiptext {
+  visibility: visible;
+}
+.A-43:hover .tooltiptext {
+  visibility: visible;
+}
+.A-44:hover .tooltiptext {
+  visibility: visible;
+}
+.A-45:hover .tooltiptext {
+  visibility: visible;
+}
+.A-46:hover .tooltiptext {
+  visibility: visible;
+}
+.A-47:hover .tooltiptext {
+  visibility: visible;
+}
+.A-48:hover .tooltiptext {
+  visibility: visible;
+}
+.A-49:hover .tooltiptext {
+  visibility: visible;
+}
+.A-50:hover .tooltiptext {
+  visibility: visible;
+}
+.A-51:hover .tooltiptext {
+  visibility: visible;
+}
+.A-52:hover .tooltiptext {
+  visibility: visible;
+}
+.A-53:hover .tooltiptext {
+  visibility: visible;
+}
+.A-54:hover .tooltiptext {
+  visibility: visible;
+}
+.A-55:hover .tooltiptext {
+  visibility: visible;
+}
+.A-56:hover .tooltiptext {
+  visibility: visible;
+}
+.A-57:hover .tooltiptext {
+  visibility: visible;
+}
+.A-58:hover .tooltiptext {
+  visibility: visible;
+}
+.A-59:hover .tooltiptext {
+  visibility: visible;
+}
+.A-60:hover .tooltiptext {
+  visibility: visible;
+}
+.A-61:hover .tooltiptext {
+  visibility: visible;
+}
+.A-62:hover .tooltiptext {
+  visibility: visible;
+}
+.A-63:hover .tooltiptext {
+  visibility: visible;
+}
+.A-64:hover .tooltiptext {
+  visibility: visible;
+}
+.A-65:hover .tooltiptext {
+  visibility: visible;
+}
+.A-66:hover .tooltiptext {
+  visibility: visible;
+}
+.A-67:hover .tooltiptext {
+  visibility: visible;
+}
+.A-68:hover .tooltiptext {
+  visibility: visible;
+}
+.A-69:hover .tooltiptext {
+  visibility: visible;
+}
+.A-70:hover .tooltiptext {
+  visibility: visible;
+}
+.B-1:hover .tooltiptext {
+  visibility: visible;
+}
+.B-2:hover .tooltiptext {
+  visibility: visible;
+}
+.B-3:hover .tooltiptext {
+  visibility: visible;
+}
+.B-4:hover .tooltiptext {
+  visibility: visible;
+}
+.B-5:hover .tooltiptext {
+  visibility: visible;
+}
+.B-6:hover .tooltiptext {
+  visibility: visible;
+}
+.B-7:hover .tooltiptext {
+  visibility: visible;
+}
+.B-8:hover .tooltiptext {
+  visibility: visible;
+}
+.B-9:hover .tooltiptext {
+  visibility: visible;
+}
+.B-10:hover .tooltiptext {
+  visibility: visible;
+}
+.B-11:hover .tooltiptext {
+  visibility: visible;
+}
+.B-12:hover .tooltiptext {
+  visibility: visible;
+}
+.B-13:hover .tooltiptext {
+  visibility: visible;
+}
+.B-14:hover .tooltiptext {
+  visibility: visible;
+}
+.B-15:hover .tooltiptext {
+  visibility: visible;
+}
+.B-16:hover .tooltiptext {
+  visibility: visible;
+}
+.B-17:hover .tooltiptext {
+  visibility: visible;
+}
+.B-18:hover .tooltiptext {
+  visibility: visible;
+}
+.B-19:hover .tooltiptext {
+  visibility: visible;
+}
+.B-20:hover .tooltiptext {
+  visibility: visible;
+}
+.B-21:hover .tooltiptext {
+  visibility: visible;
+}
+.B-22:hover .tooltiptext {
+  visibility: visible;
+}
+.B-23:hover .tooltiptext {
+  visibility: visible;
+}
+.B-24:hover .tooltiptext {
+  visibility: visible;
+}
+.B-25:hover .tooltiptext {
+  visibility: visible;
+}
+.B-26:hover .tooltiptext {
+  visibility: visible;
+}
+.B-27:hover .tooltiptext {
+  visibility: visible;
+}
+.B-28:hover .tooltiptext {
+  visibility: visible;
+}
+.B-29:hover .tooltiptext {
+  visibility: visible;
+}
+.B-30:hover .tooltiptext {
+  visibility: visible;
+}
+.B-31:hover .tooltiptext {
+  visibility: visible;
+}
+.B-32:hover .tooltiptext {
+  visibility: visible;
+}
+.B-33:hover .tooltiptext {
+  visibility: visible;
+}
+.B-34:hover .tooltiptext {
+  visibility: visible;
+}
+.B-35:hover .tooltiptext {
+  visibility: visible;
+}
+.B-36:hover .tooltiptext {
+  visibility: visible;
+}
+.B-37:hover .tooltiptext {
+  visibility: visible;
+}
+.B-38:hover .tooltiptext {
+  visibility: visible;
+}
+.B-39:hover .tooltiptext {
+  visibility: visible;
+}
+.B-40:hover .tooltiptext {
+  visibility: visible;
+}
+.B-41:hover .tooltiptext {
+  visibility: visible;
+}
+.B-42:hover .tooltiptext {
+  visibility: visible;
+}
+.B-43:hover .tooltiptext {
+  visibility: visible;
+}
+.B-44:hover .tooltiptext {
+  visibility: visible;
+}
+.B-45:hover .tooltiptext {
+  visibility: visible;
+}
+.B-46:hover .tooltiptext {
+  visibility: visible;
+}
+.B-47:hover .tooltiptext {
+  visibility: visible;
+}
+.B-48:hover .tooltiptext {
+  visibility: visible;
+}
+.B-49:hover .tooltiptext {
+  visibility: visible;
+}
+.B-50:hover .tooltiptext {
+  visibility: visible;
+}
+.B-51:hover .tooltiptext {
+  visibility: visible;
+}
+.B-52:hover .tooltiptext {
+  visibility: visible;
+}
+.B-53:hover .tooltiptext {
+  visibility: visible;
+}
+.B-54:hover .tooltiptext {
+  visibility: visible;
+}
+.B-55:hover .tooltiptext {
+  visibility: visible;
+}
+.B-56:hover .tooltiptext {
+  visibility: visible;
+}
+.B-57:hover .tooltiptext {
+  visibility: visible;
+}
+.B-58:hover .tooltiptext {
+  visibility: visible;
+}
+.B-59:hover .tooltiptext {
+  visibility: visible;
+}
+.B-60:hover .tooltiptext {
+  visibility: visible;
+}
+.B-61:hover .tooltiptext {
+  visibility: visible;
+}
+.B-62:hover .tooltiptext {
+  visibility: visible;
+}
+.B-63:hover .tooltiptext {
+  visibility: visible;
+}
+.B-64:hover .tooltiptext {
+  visibility: visible;
+}
+.B-65:hover .tooltiptext {
+  visibility: visible;
+}
+.B-66:hover .tooltiptext {
+  visibility: visible;
+}
+.B-67:hover .tooltiptext {
+  visibility: visible;
+}
+.B-68:hover .tooltiptext {
+  visibility: visible;
+}
+.B-69:hover .tooltiptext {
+  visibility: visible;
+}
+.B-70:hover .tooltiptext {
+  visibility: visible;
+}
+.B-71:hover .tooltiptext {
+  visibility: visible;
+}
+.B-72:hover .tooltiptext {
+  visibility: visible;
+}
+.B-73:hover .tooltiptext {
+  visibility: visible;
+}
+.B-74:hover .tooltiptext {
+  visibility: visible;
+}
+.B-75:hover .tooltiptext {
+  visibility: visible;
+}
+.B-76:hover .tooltiptext {
+  visibility: visible;
+}
+.B-77:hover .tooltiptext {
+  visibility: visible;
+}
+.B-78:hover .tooltiptext {
+  visibility: visible;
+}
+.B-79:hover .tooltiptext {
+  visibility: visible;
+}
+.B-80:hover .tooltiptext {
+  visibility: visible;
+}
+.B-81:hover .tooltiptext {
+  visibility: visible;
+}
+.B-82:hover .tooltiptext {
+  visibility: visible;
+}
+.B-83:hover .tooltiptext {
+  visibility: visible;
+}
+.B-84:hover .tooltiptext {
+  visibility: visible;
+}
+.B-85:hover .tooltiptext {
+  visibility: visible;
+}
+.B-86:hover .tooltiptext {
+  visibility: visible;
+}
+.B-87:hover .tooltiptext {
+  visibility: visible;
+}
+.B-88:hover .tooltiptext {
+  visibility: visible;
+}
+.B-89:hover .tooltiptext {
+  visibility: visible;
+}
+.B-90:hover .tooltiptext {
+  visibility: visible;
+}
+.B-91:hover .tooltiptext {
+  visibility: visible;
+}
+.B-92:hover .tooltiptext {
+  visibility: visible;
+}
+.B-93:hover .tooltiptext {
+  visibility: visible;
+}
+.B-94:hover .tooltiptext {
+  visibility: visible;
+}
+.B-95:hover .tooltiptext {
+  visibility: visible;
+}
+.B-96:hover .tooltiptext {
+  visibility: visible;
+}
+.B-97:hover .tooltiptext {
+  visibility: visible;
+}
+.B-98:hover .tooltiptext {
+  visibility: visible;
+}
+.B-99:hover .tooltiptext {
+  visibility: visible;
+}
+.B-100:hover .tooltiptext {
+  visibility: visible;
+}
+.D-1:hover .tooltiptext {
+  visibility: visible;
+}
+.D-2:hover .tooltiptext {
+  visibility: visible;
+}
+.D-3:hover .tooltiptext {
+  visibility: visible;
+}
+.D-4:hover .tooltiptext {
+  visibility: visible;
+}
+.D-5:hover .tooltiptext {
+  visibility: visible;
+}
+.D-6:hover .tooltiptext {
+  visibility: visible;
+}
+.D-7:hover .tooltiptext {
+  visibility: visible;
+}
+.D-8:hover .tooltiptext {
+  visibility: visible;
+}
+.D-9:hover .tooltiptext {
+  visibility: visible;
+}
+.D-10:hover .tooltiptext {
+  visibility: visible;
+}
+.D-11:hover .tooltiptext {
+  visibility: visible;
+}
+.D-12:hover .tooltiptext {
+  visibility: visible;
+}
+.D-13:hover .tooltiptext {
+  visibility: visible;
+}
+.D-14:hover .tooltiptext {
+  visibility: visible;
+}
+.D-15:hover .tooltiptext {
+  visibility: visible;
+}
+.D-16:hover .tooltiptext {
+  visibility: visible;
+}
+.D-17:hover .tooltiptext {
+  visibility: visible;
+}
+.D-18:hover .tooltiptext {
+  visibility: visible;
+}
+.D-19:hover .tooltiptext {
+  visibility: visible;
+}
+.D-20:hover .tooltiptext {
+  visibility: visible;
+}
+.D-21:hover .tooltiptext {
+  visibility: visible;
+}
+.D-22:hover .tooltiptext {
+  visibility: visible;
+}
+.D-23:hover .tooltiptext {
+  visibility: visible;
+}
+.D-24:hover .tooltiptext {
+  visibility: visible;
+}
+.D-25:hover .tooltiptext {
+  visibility: visible;
+}
+.D-26:hover .tooltiptext {
+  visibility: visible;
+}
+.D-27:hover .tooltiptext {
+  visibility: visible;
+}
+.D-28:hover .tooltiptext {
+  visibility: visible;
+}
+.D-29:hover .tooltiptext {
+  visibility: visible;
+}
+.D-30:hover .tooltiptext {
+  visibility: visible;
+}
+.D-31:hover .tooltiptext {
+  visibility: visible;
+}
+.D-32:hover .tooltiptext {
+  visibility: visible;
+}
+.D-33:hover .tooltiptext {
+  visibility: visible;
+}
+.D-34:hover .tooltiptext {
+  visibility: visible;
+}
+.D-35:hover .tooltiptext {
+  visibility: visible;
+}
+.D-36:hover .tooltiptext {
+  visibility: visible;
+}
+.D-37:hover .tooltiptext {
+  visibility: visible;
+}
+.D-38:hover .tooltiptext {
+  visibility: visible;
+}
+.D-39:hover .tooltiptext {
+  visibility: visible;
+}
+.D-40:hover .tooltiptext {
+  visibility: visible;
+}
+.D-41:hover .tooltiptext {
+  visibility: visible;
+}
+.D-42:hover .tooltiptext {
+  visibility: visible;
+}
+.D-43:hover .tooltiptext {
+  visibility: visible;
+}
+.D-44:hover .tooltiptext {
+  visibility: visible;
+}
+.D-45:hover .tooltiptext {
+  visibility: visible;
+}
+.D-46:hover .tooltiptext {
+  visibility: visible;
+}
+.D-47:hover .tooltiptext {
+  visibility: visible;
+}
+.D-48:hover .tooltiptext {
+  visibility: visible;
+}
+.D-49:hover .tooltiptext {
+  visibility: visible;
+}
+.D-50:hover .tooltiptext {
+  visibility: visible;
+}
+.D-51:hover .tooltiptext {
+  visibility: visible;
+}
+.D-52:hover .tooltiptext {
+  visibility: visible;
+}
+.D-53:hover .tooltiptext {
+  visibility: visible;
+}
+.D-54:hover .tooltiptext {
+  visibility: visible;
+}
+.D-55:hover .tooltiptext {
+  visibility: visible;
+}
+.D-56:hover .tooltiptext {
+  visibility: visible;
+}
+.D-57:hover .tooltiptext {
+  visibility: visible;
+}
+.D-58:hover .tooltiptext {
+  visibility: visible;
+}
+.D-59:hover .tooltiptext {
+  visibility: visible;
+}
+.D-60:hover .tooltiptext {
+  visibility: visible;
+}
+.C-1:hover .tooltiptext {
+  visibility: visible;
+}
+.C-2:hover .tooltiptext {
+  visibility: visible;
+}
+.C-3:hover .tooltiptext {
+  visibility: visible;
+}
+.C-4:hover .tooltiptext {
+  visibility: visible;
+}
+.C-5:hover .tooltiptext {
+  visibility: visible;
+}
+.C-6:hover .tooltiptext {
+  visibility: visible;
+}
+.C-7:hover .tooltiptext {
+  visibility: visible;
+}
+.C-8:hover .tooltiptext {
+  visibility: visible;
+}
+.C-9:hover .tooltiptext {
+  visibility: visible;
+}
+.C-10:hover .tooltiptext {
+  visibility: visible;
+}
+.C-11:hover .tooltiptext {
+  visibility: visible;
+}
+.C-12:hover .tooltiptext {
+  visibility: visible;
+}
+.C-13:hover .tooltiptext {
+  visibility: visible;
+}
+.C-14:hover .tooltiptext {
+  visibility: visible;
+}
+.C-15:hover .tooltiptext {
+  visibility: visible;
+}
+.C-16:hover .tooltiptext {
+  visibility: visible;
+}
+.C-17:hover .tooltiptext {
+  visibility: visible;
+}
+.C-18:hover .tooltiptext {
+  visibility: visible;
+}
+.C-19:hover .tooltiptext {
+  visibility: visible;
+}
+.C-20:hover .tooltiptext {
+  visibility: visible;
+}
+.C-21:hover .tooltiptext {
+  visibility: visible;
+}
+.C-22:hover .tooltiptext {
+  visibility: visible;
+}
+.C-23:hover .tooltiptext {
+  visibility: visible;
+}
+.C-24:hover .tooltiptext {
+  visibility: visible;
+}
+.C-25:hover .tooltiptext {
+  visibility: visible;
+}
+.C-26:hover .tooltiptext {
+  visibility: visible;
+}
+.C-27:hover .tooltiptext {
+  visibility: visible;
+}
+.C-28:hover .tooltiptext {
+  visibility: visible;
+}
+.C-29:hover .tooltiptext {
+  visibility: visible;
+}
+.C-30:hover .tooltiptext {
+  visibility: visible;
+}
+.C-31:hover .tooltiptext {
+  visibility: visible;
+}
+.C-32:hover .tooltiptext {
+  visibility: visible;
+}
+.C-33:hover .tooltiptext {
+  visibility: visible;
+}
+.C-34:hover .tooltiptext {
+  visibility: visible;
+}
+.C-35:hover .tooltiptext {
+  visibility: visible;
+}
+.C-36:hover .tooltiptext {
+  visibility: visible;
+}
+.C-37:hover .tooltiptext {
+  visibility: visible;
+}
+.C-38:hover .tooltiptext {
+  visibility: visible;
+}
+.C-39:hover .tooltiptext {
+  visibility: visible;
+}
+.C-40:hover .tooltiptext {
+  visibility: visible;
+}
+.C-41:hover .tooltiptext {
+  visibility: visible;
+}
+.C-42:hover .tooltiptext {
+  visibility: visible;
+}
+.C-43:hover .tooltiptext {
+  visibility: visible;
+}
+.C-44:hover .tooltiptext {
+  visibility: visible;
+}
+.C-45:hover .tooltiptext {
+  visibility: visible;
+}
+.C-46:hover .tooltiptext {
+  visibility: visible;
+}
+.C-47:hover .tooltiptext {
+  visibility: visible;
+}
+.C-48:hover .tooltiptext {
+  visibility: visible;
+}
+.C-49:hover .tooltiptext {
+  visibility: visible;
+}
+.C-50:hover .tooltiptext {
+  visibility: visible;
+}
+.C-51:hover .tooltiptext {
+  visibility: visible;
+}
+.C-52:hover .tooltiptext {
+  visibility: visible;
+}
+.C-53:hover .tooltiptext {
+  visibility: visible;
+}
+.C-54:hover .tooltiptext {
+  visibility: visible;
+}
+.C-55:hover .tooltiptext {
+  visibility: visible;
+}
+.C-56:hover .tooltiptext {
+  visibility: visible;
+}
+.C-57:hover .tooltiptext {
+  visibility: visible;
+}
+.C-58:hover .tooltiptext {
+  visibility: visible;
+}
+.C-59:hover .tooltiptext {
+  visibility: visible;
+}
+.C-60:hover .tooltiptext {
+  visibility: visible;
+}
+.C-61:hover .tooltiptext {
+  visibility: visible;
+}
+.C-62:hover .tooltiptext {
+  visibility: visible;
+}
+.C-63:hover .tooltiptext {
+  visibility: visible;
+}
+.C-64:hover .tooltiptext {
+  visibility: visible;
+}
+.C-65:hover .tooltiptext {
+  visibility: visible;
+}
+    </style>
+  </head>
+  <body>
+      <h1>Venue map</h1>
+      <div class="container">
+      <div class="scene">Scene</div>
+      <div class="GC" onclick= "klikaj1()">Golden circle
+      <script>
+      function klikaj1() {
+        ticket_price_sector.value = 'price_GC';
+        ticket_seat_id_seq.value = 'GC';
+      }
+      </script>
+      </div>
+      <div class="board" onclick= "klikaj3()">Main board
+      <script>
+      function klikaj3() {
+        ticket_price_sector.value = 'price_B';
+        ticket_seat_id_seq.value = 'MB';
+      }
+      </script>
+      </div>
+      <div class="A-1" onclick= "klikaj2()">
+        <span class="tooltiptext">A-1</span>
+        <script>
+        function klikaj2() {
+          ticket_price_sector.value = 'price_A';
+          ticket_seat_id_seq.value = 'A-1';
+        }
+        </script>
+      </div>
+      <div class="A-2" onclick= "klikaj4()">
+        <span class="tooltiptext">A-2</span>
+        <script>
+        function klikaj4() {
+          ticket_price_sector.value = 'price_A';
+          ticket_seat_id_seq.value = 'A-2';
+        }
+        </script>
+      </div>
+      <div class="A-3" onclick= "klikaj5()">
+        <span class="tooltiptext">A-3</span>
+        <script>
+        function klikaj5() {
+          ticket_price_sector.value = 'price_A';
+          ticket_seat_id_seq.value = 'A-3';
+        }
+        </script>
+      </div>
+      <div class="A-4" onclick= "klikaj6()">
+        <span class="tooltiptext">A-4</span>
+        <script>
+        function klikaj6() {
+          ticket_price_sector.value = 'price_A';
+          ticket_seat_id_seq.value = 'A-4';
+        }
+        </script>
+      </div>
+      <div class="A-5" onclick= "klikaj7()">
+        <span class="tooltiptext">A-5</span>
+        <script>
+        function klikaj7() {
+          ticket_price_sector.value = 'price_A';
+          ticket_seat_id_seq.value = 'A-5';
+        }
+        </script>
+      </div>
+      <div class="A-6" onclick= "klikaj8()">
+        <span class="tooltiptext">A-6</span>
+        <script>
+        function klikaj8() {
+          ticket_price_sector.value = 'price_A';
+          ticket_seat_id_seq.value = 'A-6';
+        }
+        </script>
+      </div>
+      <div class="A-7" onclick= "klikaj9()">
+        <span class="tooltiptext">A-7</span>
+        <script>
+        function klikaj9() {
+          ticket_price_sector.value = 'price_A';
+          ticket_seat_id_seq.value = 'A-7';
+        }
+        </script>
+      </div>
+      <div class="A-8" onclick= "klikaj10()">
+        <span class="tooltiptext">A-8</span>
+        <script>
+        function klikaj10() {
+          ticket_price_sector.value = 'price_A';
+          ticket_seat_id_seq.value = 'A-8';
+        }
+        </script>
+      </div>
+      <div class="A-9" onclick= "klikaj11()">
+        <span class="tooltiptext">A-9</span>
+        <script>
+        function klikaj11() {
+          ticket_price_sector.value = 'price_A';
+          ticket_seat_id_seq.value = 'A-9';
+        }
+        </script>
+      </div>
+      <div class="A-10" onclick= "klikaj12()">
+        <span class="tooltiptext">A-10</span>
+        <script>
+        function klikaj12() {
+          ticket_price_sector.value = 'price_A';
+          ticket_seat_id_seq.value = 'A-10';
+        }
+        </script>
+      </div>
+      <div class="A-11" onclick= "klikaj13()">
+        <span class="tooltiptext">A-11</span>
+        <script>
+        function klikaj13() {
+          ticket_price_sector.value = 'price_A';
+          ticket_seat_id_seq.value = 'A-11';
+        }
+        </script>
+      </div>
+      <div class="A-12" onclick= "klikaj14()">
+        <span class="tooltiptext">A-12</span>
+        <script>
+        function klikaj14() {
+          ticket_price_sector.value = 'price_A';
+          ticket_seat_id_seq.value = 'A-12';
+        }
+        </script>
+      </div>
+      <div class="A-13" onclick= "klikaj15()">
+        <span class="tooltiptext">A-13</span>
+        <script>
+        function klikaj15() {
+          ticket_price_sector.value = 'price_A';
+          ticket_seat_id_seq.value = 'A-13';
+        }
+        </script>
+      </div>
+      <div class="A-14" onclick= "klikaj16()">
+        <span class="tooltiptext">A-14</span>
+        <script>
+        function klikaj16() {
+          ticket_price_sector.value = 'price_A';
+          ticket_seat_id_seq.value = 'A-14';
+        }
+        </script>
+      </div>
+      <div class="A-15" onclick= "klikaj17()">
+        <span class="tooltiptext">A-15</span>
+        <script>
+        function klikaj17() {
+          ticket_price_sector.value = 'price_A';
+          ticket_seat_id_seq.value = 'A-15';
+        }
+        </script>
+      </div>
+      <div class="A-16" onclick= "klikaj18()">
+        <span class="tooltiptext">A-16</span>
+        <script>
+        function klikaj18() {
+          ticket_price_sector.value = 'price_A';
+          ticket_seat_id_seq.value = 'A-16';
+        }
+        </script>
+      </div>
+      <div class="A-17" onclick= "klikaj19()">
+        <span class="tooltiptext">A-17</span>
+        <script>
+        function klikaj19() {
+          ticket_price_sector.value = 'price_A';
+          ticket_seat_id_seq.value = 'A-17';
+        }
+        </script>
+      </div>
+      <div class="A-18" onclick= "klikaj20()">
+        <span class="tooltiptext">A-18</span>
+        <script>
+        function klikaj20() {
+          ticket_price_sector.value = 'price_A';
+          ticket_seat_id_seq.value = 'A-18';
+        }
+        </script>
+      </div>
+      <div class="A-19" onclick= "klikaj21()">
+        <span class="tooltiptext">A-19</span>
+        <script>
+        function klikaj21() {
+          ticket_price_sector.value = 'price_A';
+          ticket_seat_id_seq.value = 'A-19';
+        }
+        </script>
+      </div>
+      <div class="A-20" onclick= "klikaj22()">
+        <span class="tooltiptext">A-20</span>
+        <script>
+        function klikaj22() {
+          ticket_price_sector.value = 'price_A';
+          ticket_seat_id_seq.value = 'A-20';
+        }
+        </script>
+      </div>
+      <div class="A-21" onclick= "klikaj23()">
+        <span class="tooltiptext">A-21</span>
+        <script>
+        function klikaj23() {
+          ticket_price_sector.value = 'price_A';
+          ticket_seat_id_seq.value = 'A-21';
+        }
+        </script>
+      </div>
+      <div class="A-22" onclick= "klikaj24()">
+        <span class="tooltiptext">A-22</span>
+        <script>
+        function klikaj24() {
+          ticket_price_sector.value = 'price_A';
+          ticket_seat_id_seq.value = 'A-22';
+        }
+        </script>
+      </div>
+      <div class="A-23" onclick= "klikaj25()">
+        <span class="tooltiptext">A-23</span>
+        <script>
+        function klikaj25() {
+          ticket_price_sector.value = 'price_A';
+          ticket_seat_id_seq.value = 'A-23';
+        }
+        </script>
+      </div>
+      <div class="A-24" onclick= "klikaj26()">
+        <span class="tooltiptext">A-24</span>
+        <script>
+        function klikaj26() {
+          ticket_price_sector.value = 'price_A';
+          ticket_seat_id_seq.value = 'A-24';
+        }
+        </script>
+      </div>
+      <div class="A-25" onclick= "klikaj27()">
+        <span class="tooltiptext">A-25</span>
+        <script>
+        function klikaj27() {
+          ticket_price_sector.value = 'price_A';
+          ticket_seat_id_seq.value = 'A-25';
+        }
+        </script>
+      </div>
+      <div class="A-26" onclick= "klikaj28()">
+        <span class="tooltiptext">A-26</span>
+        <script>
+        function klikaj28() {
+          ticket_price_sector.value = 'price_A';
+          ticket_seat_id_seq.value = 'A-26';
+        }
+        </script>
+      </div>
+      <div class="A-27" onclick= "klikaj29()">
+        <span class="tooltiptext">A-27</span>
+        <script>
+        function klikaj29() {
+          ticket_price_sector.value = 'price_A';
+          ticket_seat_id_seq.value = 'A-27';
+        }
+        </script>
+      </div>
+      <div class="A-28" onclick= "klikaj30()">
+        <span class="tooltiptext">A-28</span>
+        <script>
+        function klikaj30() {
+          ticket_price_sector.value = 'price_A';
+          ticket_seat_id_seq.value = 'A-28';
+        }
+        </script>
+      </div>
+      <div class="A-29" onclick= "klikaj31()">
+        <span class="tooltiptext">A-29</span>
+        <script>
+        function klikaj31() {
+          ticket_price_sector.value = 'price_A';
+          ticket_seat_id_seq.value = 'A-29';
+        }
+        </script>
+      </div>
+      <div class="A-30" onclick= "klikaj32()">
+        <span class="tooltiptext">A-30</span>
+        <script>
+        function klikaj32() {
+          ticket_price_sector.value = 'price_A';
+          ticket_seat_id_seq.value = 'A-30';
+        }
+        </script>
+      </div>
+      <div class="A-31" onclick= "klikaj33()">
+        <span class="tooltiptext">A-31</span>
+        <script>
+        function klikaj33() {
+          ticket_price_sector.value = 'price_A';
+          ticket_seat_id_seq.value = 'A-31';
+        }
+        </script>
+      </div>
+      <div class="A-32" onclick= "klikaj34()">
+        <span class="tooltiptext">A-32</span>
+        <script>
+        function klikaj34() {
+          ticket_price_sector.value = 'price_A';
+          ticket_seat_id_seq.value = 'A-32';
+        }
+        </script>
+      </div>
+      <div class="A-33" onclick= "klikaj35()">
+        <span class="tooltiptext">A-33</span>
+        <script>
+        function klikaj35() {
+          ticket_price_sector.value = 'price_A';
+          ticket_seat_id_seq.value = 'A-33';
+        }
+        </script>
+      </div>
+      <div class="A-34" onclick= "klikaj36()">
+        <span class="tooltiptext">A-34</span>
+        <script>
+        function klikaj36() {
+          ticket_price_sector.value = 'price_A';
+          ticket_seat_id_seq.value = 'A-34';
+        }
+        </script>
+      </div>
+      <div class="A-35" onclick= "klikaj37()">
+        <span class="tooltiptext">A-35</span>
+        <script>
+        function klikaj37() {
+          ticket_price_sector.value = 'price_A';
+          ticket_seat_id_seq.value = 'A-35';
+        }
+        </script>
+      </div>
+      <div class="A-36" onclick= "klikaj38()">
+        <span class="tooltiptext">A-36</span>
+        <script>
+        function klikaj38() {
+          ticket_price_sector.value = 'price_A';
+          ticket_seat_id_seq.value = 'A-36';
+        }
+        </script>
+      </div>
+      <div class="A-37" onclick= "klikaj39()">
+        <span class="tooltiptext">A-37</span>
+        <script>
+        function klikaj39() {
+          ticket_price_sector.value = 'price_A';
+          ticket_seat_id_seq.value = 'A-37';
+        }
+        </script>
+      </div>
+      <div class="A-38" onclick= "klikaj40()">
+        <span class="tooltiptext">A-38</span>
+        <script>
+        function klikaj40() {
+          ticket_price_sector.value = 'price_A';
+          ticket_seat_id_seq.value = 'A-38';
+        }
+        </script>
+      </div>
+      <div class="A-39" onclick= "klikaj41()">
+        <span class="tooltiptext">A-39</span>
+        <script>
+        function klikaj41() {
+          ticket_price_sector.value = 'price_A';
+          ticket_seat_id_seq.value = 'A-39';
+        }
+        </script>
+      </div>
+      <div class="A-40" onclick= "klikaj42()">
+        <span class="tooltiptext">A-40</span>
+        <script>
+        function klikaj42() {
+          ticket_price_sector.value = 'price_A';
+          ticket_seat_id_seq.value = 'A-40';
+        }
+        </script>
+      </div>
+      <div class="A-41" onclick= "klikaj43()">
+        <span class="tooltiptext">A-41</span>
+        <script>
+        function klikaj43() {
+          ticket_price_sector.value = 'price_A';
+          ticket_seat_id_seq.value = 'A-41';
+        }
+        </script>
+      </div>
+      <div class="A-42" onclick= "klikaj44()">
+        <span class="tooltiptext">A-42</span>
+        <script>
+        function klikaj44() {
+          ticket_price_sector.value = 'price_A';
+          ticket_seat_id_seq.value = 'A-42';
+        }
+        </script>
+      </div>
+      <div class="A-43" onclick= "klikaj45()">
+        <span class="tooltiptext">A-43</span>
+        <script>
+        function klikaj45() {
+          ticket_price_sector.value = 'price_A';
+          ticket_seat_id_seq.value = 'A-43';
+        }
+        </script>
+      </div>
+      <div class="A-44" onclick= "klikaj46()">
+        <span class="tooltiptext">A-44</span>
+        <script>
+        function klikaj46() {
+          ticket_price_sector.value = 'price_A';
+          ticket_seat_id_seq.value = 'A-44';
+        }
+        </script>
+      </div>
+      <div class="A-45" onclick= "klikaj47()">
+        <span class="tooltiptext">A-45</span>
+        <script>
+        function klikaj47() {
+          ticket_price_sector.value = 'price_A';
+          ticket_seat_id_seq.value = 'A-45';
+        }
+        </script>
+      </div>
+      <div class="A-46" onclick= "klikaj48()">
+        <span class="tooltiptext">A-46</span>
+        <script>
+        function klikaj48() {
+          ticket_price_sector.value = 'price_A';
+          ticket_seat_id_seq.value = 'A-46';
+        }
+        </script>
+      </div>
+      <div class="A-47" onclick= "klikaj49()">
+        <span class="tooltiptext">A-47</span>
+        <script>
+        function klikaj49() {
+          ticket_price_sector.value = 'price_A';
+          ticket_seat_id_seq.value = 'A-47';
+        }
+        </script>
+      </div>
+      <div class="A-48" onclick= "klikaj50()">
+        <span class="tooltiptext">A-48</span>
+        <script>
+        function klikaj50() {
+          ticket_price_sector.value = 'price_A';
+          ticket_seat_id_seq.value = 'A-48';
+        }
+        </script>
+      </div>
+      <div class="A-49" onclick= "klikaj51()">
+        <span class="tooltiptext">A-49</span>
+        <script>
+        function klikaj51() {
+          ticket_price_sector.value = 'price_A';
+          ticket_seat_id_seq.value = 'A-49';
+        }
+        </script>
+      </div>
+      <div class="A-50" onclick= "klikaj52()">
+        <span class="tooltiptext">A-50</span>
+        <script>
+        function klikaj52() {
+          ticket_price_sector.value = 'price_A';
+          ticket_seat_id_seq.value = 'A-50';
+        }
+        </script>
+      </div>
+      <div class="A-51" onclick= "klikaj53()">
+        <span class="tooltiptext">A-51</span>
+        <script>
+        function klikaj53() {
+          ticket_price_sector.value = 'price_A';
+          ticket_seat_id_seq.value = 'A-51';
+        }
+        </script>
+      </div>
+      <div class="A-52" onclick= "klikaj54()">
+        <span class="tooltiptext">A-52</span>
+        <script>
+        function klikaj54() {
+          ticket_price_sector.value = 'price_A';
+          ticket_seat_id_seq.value = 'A-52';
+        }
+        </script>
+      </div>
+      <div class="A-53" onclick= "klikaj55()">
+        <span class="tooltiptext">A-53</span>
+        <script>
+        function klikaj55() {
+          ticket_price_sector.value = 'price_A';
+          ticket_seat_id_seq.value = 'A-53';
+        }
+        </script>
+      </div>
+      <div class="A-54" onclick= "klikaj56()">
+        <span class="tooltiptext">A-54</span>
+        <script>
+        function klikaj56() {
+          ticket_price_sector.value = 'price_A';
+          ticket_seat_id_seq.value = 'A-54';
+        }
+        </script>
+      </div>
+      <div class="A-55" onclick= "klikaj57()">
+        <span class="tooltiptext">A-55</span>
+        <script>
+        function klikaj57() {
+          ticket_price_sector.value = 'price_A';
+          ticket_seat_id_seq.value = 'A-55';
+        }
+        </script>
+      </div>
+      <div class="A-56" onclick= "klikaj58()">
+        <span class="tooltiptext">A-56</span>
+        <script>
+        function klikaj58() {
+          ticket_price_sector.value = 'price_A';
+          ticket_seat_id_seq.value = 'A-56';
+        }
+        </script>
+      </div>
+      <div class="A-57" onclick= "klikaj59()">
+        <span class="tooltiptext">A-57</span>
+        <script>
+        function klikaj59() {
+          ticket_price_sector.value = 'price_A';
+          ticket_seat_id_seq.value = 'A-57';
+        }
+        </script>
+      </div>
+      <div class="A-58" onclick= "klikaj60()">
+        <span class="tooltiptext">A-58</span>
+        <script>
+        function klikaj60() {
+          ticket_price_sector.value = 'price_A';
+          ticket_seat_id_seq.value = 'A-58';
+        }
+        </script>
+      </div>
+      <div class="A-59" onclick= "klikaj61()">
+        <span class="tooltiptext">A-59</span>
+        <script>
+        function klikaj61() {
+          ticket_price_sector.value = 'price_A';
+          ticket_seat_id_seq.value = 'A-59';
+        }
+        </script>
+      </div>
+      <div class="A-60" onclick= "klikaj62()">
+        <span class="tooltiptext">A-60</span>
+        <script>
+        function klikaj62() {
+          ticket_price_sector.value = 'price_A';
+          ticket_seat_id_seq.value = 'A-60';
+        }
+        </script>
+      </div>
+      <div class="A-61" onclick= "klikaj63()">
+        <span class="tooltiptext">A-61</span>
+        <script>
+        function klikaj63() {
+          ticket_price_sector.value = 'price_A';
+          ticket_seat_id_seq.value = 'A-61';
+        }
+        </script>
+      </div>
+      <div class="A-62" onclick= "klikaj64()">
+        <span class="tooltiptext">A-62</span>
+        <script>
+        function klikaj64() {
+          ticket_price_sector.value = 'price_A';
+          ticket_seat_id_seq.value = 'A-62';
+        }
+        </script>
+      </div>
+      <div class="A-63" onclick= "klikaj65()">
+        <span class="tooltiptext">A-63</span>
+        <script>
+        function klikaj65() {
+          ticket_price_sector.value = 'price_A';
+          ticket_seat_id_seq.value = 'A-63';
+        }
+        </script>
+      </div>
+      <div class="A-64" onclick= "klikaj66()">
+        <span class="tooltiptext">A-64</span>
+        <script>
+        function klikaj66() {
+          ticket_price_sector.value = 'price_A';
+          ticket_seat_id_seq.value = 'A-64';
+        }
+        </script>
+      </div>
+      <div class="A-65" onclick= "klikaj67()">
+        <span class="tooltiptext">A-65</span>
+        <script>
+        function klikaj67() {
+          ticket_price_sector.value = 'price_A';
+          ticket_seat_id_seq.value = 'A-65';
+        }
+        </script>
+      </div>
+      <div class="A-66" onclick= "klikaj68()">
+        <span class="tooltiptext">A-66</span>
+        <script>
+        function klikaj68() {
+          ticket_price_sector.value = 'price_A';
+          ticket_seat_id_seq.value = 'A-66';
+        }
+        </script>
+      </div>
+      <div class="A-67" onclick= "klikaj69()">
+        <span class="tooltiptext">A-67</span>
+        <script>
+        function klikaj69() {
+          ticket_price_sector.value = 'price_A';
+          ticket_seat_id_seq.value = 'A-67';
+        }
+        </script>
+      </div>
+      <div class="A-68" onclick= "klikaj70()">
+        <span class="tooltiptext">A-68</span>
+        <script>
+        function klikaj70() {
+          ticket_price_sector.value = 'price_A';
+          ticket_seat_id_seq.value = 'A-68';
+        }
+        </script>
+      </div>
+      <div class="A-69" onclick= "klikaj71()">
+        <span class="tooltiptext">A-69</span>
+        <script>
+        function klikaj71() {
+          ticket_price_sector.value = 'price_A';
+          ticket_seat_id_seq.value = 'A-69';
+        }
+        </script>
+      </div>
+      <div class="A-70" onclick= "klikaj72()">
+        <span class="tooltiptext">A-70</span>
+        <script>
+        function klikaj72() {
+          ticket_price_sector.value = 'price_A';
+          ticket_seat_id_seq.value = 'A-70';
+        }
+        </script>
+      </div>
+      <div class="B-1" onclick= "klikac1()">
+        <span class="tooltiptext">B-1</span>
+        <script>
+        function klikac1() {
+          ticket_price_sector.value = 'price_B';
+          ticket_seat_id_seq.value = 'B-1';
+        }
+        </script>
+      </div>
+      <div class="B-2" onclick= "klikac2()">
+        <span class="tooltiptext">B-2</span>
+        <script>
+        function klikac2() {
+          ticket_price_sector.value = 'price_B';
+          ticket_seat_id_seq.value = 'B-2';
+        }
+        </script>
+      </div>
+      <div class="B-3" onclick= "klikac3()">
+        <span class="tooltiptext">B-3</span>
+        <script>
+        function klikac3() {
+          ticket_price_sector.value = 'price_B';
+          ticket_seat_id_seq.value = 'B-3';
+        }
+        </script>
+      </div>
+      <div class="B-4" onclick= "klikac4()">
+        <span class="tooltiptext">B-4</span>
+        <script>
+        function klikac4() {
+          ticket_price_sector.value = 'price_B';
+          ticket_seat_id_seq.value = 'B-4';
+        }
+        </script>
+      </div>
+      <div class="B-5" onclick= "klikac5()">
+        <span class="tooltiptext">B-5</span>
+        <script>
+        function klikac5() {
+          ticket_price_sector.value = 'price_B';
+          ticket_seat_id_seq.value = 'B-5';
+        }
+        </script>
+      </div>
+      <div class="B-6" onclick= "klikac6()">
+        <span class="tooltiptext">B-6</span>
+        <script>
+        function klikac6() {
+          ticket_price_sector.value = 'price_B';
+          ticket_seat_id_seq.value = 'B-6';
+        }
+        </script>
+      </div>
+      <div class="B-7" onclick= "klikac7()">
+        <span class="tooltiptext">B-7</span>
+        <script>
+        function klikac7() {
+          ticket_price_sector.value = 'price_B';
+          ticket_seat_id_seq.value = 'B-7';
+        }
+        </script>
+      </div>
+      <div class="B-8" onclick= "klikac8()">
+        <span class="tooltiptext">B-8</span>
+        <script>
+        function klikac8() {
+          ticket_price_sector.value = 'price_B';
+          ticket_seat_id_seq.value = 'B-8';
+        }
+        </script>
+      </div>
+      <div class="B-9" onclick= "klikac9()">
+        <span class="tooltiptext">B-9</span>
+        <script>
+        function klikac9() {
+          ticket_price_sector.value = 'price_B';
+          ticket_seat_id_seq.value = 'B-9';
+        }
+        </script>
+      </div>
+      <div class="B-10" onclick= "klikac10()">
+        <span class="tooltiptext">B-10</span>
+        <script>
+        function klikac10() {
+          ticket_price_sector.value = 'price_B';
+          ticket_seat_id_seq.value = 'B-10';
+        }
+        </script>
+      </div>
+      <div class="B-11" onclick= "klikac11()">
+        <span class="tooltiptext">B-11</span>
+        <script>
+        function klikac11() {
+          ticket_price_sector.value = 'price_B';
+          ticket_seat_id_seq.value = 'B-11';
+        }
+        </script>
+      </div>
+      <div class="B-12" onclick= "klikac12()">
+        <span class="tooltiptext">B-12</span>
+        <script>
+        function klikac12() {
+          ticket_price_sector.value = 'price_B';
+          ticket_seat_id_seq.value = 'B-12';
+        }
+        </script>
+      </div>
+      <div class="B-13" onclick= "klikac13()">
+        <span class="tooltiptext">B-13</span>
+        <script>
+        function klikac13() {
+          ticket_price_sector.value = 'price_B';
+          ticket_seat_id_seq.value = 'B-13';
+        }
+        </script>
+      </div>
+      <div class="B-14" onclick= "klikac14()">
+        <span class="tooltiptext">B-14</span>
+        <script>
+        function klikac14() {
+          ticket_price_sector.value = 'price_B';
+          ticket_seat_id_seq.value = 'B-14';
+        }
+        </script>
+      </div>
+      <div class="B-15" onclick= "klikac15()">
+        <span class="tooltiptext">B-15</span>
+        <script>
+        function klikac15() {
+          ticket_price_sector.value = 'price_B';
+          ticket_seat_id_seq.value = 'B-15';
+        }
+        </script>
+      </div>
+      <div class="B-16" onclick= "klikac16()">
+        <span class="tooltiptext">B-16</span>
+        <script>
+        function klikac16() {
+          ticket_price_sector.value = 'price_B';
+          ticket_seat_id_seq.value = 'B-16';
+        }
+        </script>
+      </div>
+      <div class="B-17" onclick= "klikac17()">
+        <span class="tooltiptext">B-17</span>
+        <script>
+        function klikac17() {
+          ticket_price_sector.value = 'price_B';
+          ticket_seat_id_seq.value = 'B-17';
+        }
+        </script>
+      </div>
+      <div class="B-18" onclick= "klikac18()">
+        <span class="tooltiptext">B-18</span>
+        <script>
+        function klikac18() {
+          ticket_price_sector.value = 'price_B';
+          ticket_seat_id_seq.value = 'B-18';
+        }
+        </script>
+      </div>
+      <div class="B-19" onclick= "klikac19()">
+        <span class="tooltiptext">B-19</span>
+        <script>
+        function klikac19() {
+          ticket_price_sector.value = 'price_B';
+          ticket_seat_id_seq.value = 'B-19';
+        }
+        </script>
+      </div>
+      <div class="B-20" onclick= "klikac20()">
+        <span class="tooltiptext">B-20</span>
+        <script>
+        function klikac20() {
+          ticket_price_sector.value = 'price_B';
+          ticket_seat_id_seq.value = 'B-20';
+        }
+        </script>
+      </div>
+      <div class="B-21" onclick= "klikac21()">
+        <span class="tooltiptext">B-21</span>
+        <script>
+        function klikac21() {
+          ticket_price_sector.value = 'price_B';
+          ticket_seat_id_seq.value = 'B-21';
+        }
+        </script>
+      </div>
+      <div class="B-22" onclick= "klikac22()">
+        <span class="tooltiptext">B-22</span>
+        <script>
+        function klikac22() {
+          ticket_price_sector.value = 'price_B';
+          ticket_seat_id_seq.value = 'B-22';
+        }
+        </script>
+      </div>
+      <div class="B-23" onclick= "klikac23()">
+        <span class="tooltiptext">B-23</span>
+        <script>
+        function klikac23() {
+          ticket_price_sector.value = 'price_B';
+          ticket_seat_id_seq.value = 'B-23';
+        }
+        </script>
+      </div>
+      <div class="B-24" onclick= "klikac24()">
+        <span class="tooltiptext">B-24</span>
+        <script>
+        function klikac24() {
+          ticket_price_sector.value = 'price_B';
+          ticket_seat_id_seq.value = 'B-24';
+        }
+        </script>
+      </div>
+      <div class="B-25" onclick= "klikac25()">
+        <span class="tooltiptext">B-25</span>
+        <script>
+        function klikac25() {
+          ticket_price_sector.value = 'price_B';
+          ticket_seat_id_seq.value = 'B-25';
+        }
+        </script>
+      </div>
+      <div class="B-26" onclick= "klikac26()">
+        <span class="tooltiptext">B-26</span>
+        <script>
+        function klikac26() {
+          ticket_price_sector.value = 'price_B';
+          ticket_seat_id_seq.value = 'B-26';
+        }
+        </script>
+      </div>
+      <div class="B-27" onclick= "klikac27()">
+        <span class="tooltiptext">B-27</span>
+        <script>
+        function klikac27() {
+          ticket_price_sector.value = 'price_B';
+          ticket_seat_id_seq.value = 'B-27';
+        }
+        </script>
+      </div>
+      <div class="B-28" onclick= "klikac28()">
+        <span class="tooltiptext">B-28</span>
+        <script>
+        function klikac28() {
+          ticket_price_sector.value = 'price_B';
+          ticket_seat_id_seq.value = 'B-28';
+        }
+        </script>
+      </div>
+      <div class="B-29" onclick= "klikac29()">
+        <span class="tooltiptext">B-29</span>
+        <script>
+        function klikac29() {
+          ticket_price_sector.value = 'price_B';
+          ticket_seat_id_seq.value = 'B-29';
+        }
+        </script>
+      </div>
+      <div class="B-30" onclick= "klikac30()">
+        <span class="tooltiptext">B-30</span>
+        <script>
+        function klikac30() {
+          ticket_price_sector.value = 'price_B';
+          ticket_seat_id_seq.value = 'B-30';
+        }
+        </script>
+      </div>
+      <div class="B-31" onclick= "klikac31()">
+        <span class="tooltiptext">B-31</span>
+        <script>
+        function klikac31() {
+          ticket_price_sector.value = 'price_B';
+          ticket_seat_id_seq.value = 'B-31';
+        }
+        </script>
+      </div>
+      <div class="B-32" onclick= "klikac32()">
+        <span class="tooltiptext">B-32</span>
+        <script>
+        function klikac32() {
+          ticket_price_sector.value = 'price_B';
+          ticket_seat_id_seq.value = 'B-32';
+        }
+        </script>
+      </div>
+      <div class="B-33" onclick= "klikac33()">
+        <span class="tooltiptext">B-33</span>
+        <script>
+        function klikac33() {
+          ticket_price_sector.value = 'price_B';
+          ticket_seat_id_seq.value = 'B-33';
+        }
+        </script>
+      </div>
+      <div class="B-34" onclick= "klikac34()">
+        <span class="tooltiptext">B-34</span>
+        <script>
+        function klikac34() {
+          ticket_price_sector.value = 'price_B';
+          ticket_seat_id_seq.value = 'B-34';
+        }
+        </script>
+      </div>
+      <div class="B-35" onclick= "klikac35()">
+        <span class="tooltiptext">B-35</span>
+        <script>
+        function klikac35() {
+          ticket_price_sector.value = 'price_B';
+          ticket_seat_id_seq.value = 'B-35';
+        }
+        </script>
+      </div>
+      <div class="B-36" onclick= "klikac36()">
+        <span class="tooltiptext">B-36</span>
+        <script>
+        function klikac36() {
+          ticket_price_sector.value = 'price_B';
+          ticket_seat_id_seq.value = 'B-36';
+        }
+        </script>
+      </div>
+      <div class="B-37" onclick= "klikac37()">
+        <span class="tooltiptext">B-37</span>
+        <script>
+        function klikac37() {
+          ticket_price_sector.value = 'price_B';
+          ticket_seat_id_seq.value = 'B-37';
+        }
+        </script>
+      </div>
+      <div class="B-38" onclick= "klikac38()">
+        <span class="tooltiptext">B-38</span>
+        <script>
+        function klikac38() {
+          ticket_price_sector.value = 'price_B';
+          ticket_seat_id_seq.value = 'B-38';
+        }
+        </script>
+      </div>
+      <div class="B-39" onclick= "klikac39()">
+        <span class="tooltiptext">B-39</span>
+        <script>
+        function klikac39() {
+          ticket_price_sector.value = 'price_B';
+          ticket_seat_id_seq.value = 'B-39';
+        }
+        </script>
+      </div>
+      <div class="B-40" onclick= "klikac40()">
+        <span class="tooltiptext">B-40</span>
+        <script>
+        function klikac40() {
+          ticket_price_sector.value = 'price_B';
+          ticket_seat_id_seq.value = 'B-40';
+        }
+        </script>
+      </div>
+      <div class="B-41" onclick= "klikac41()">
+        <span class="tooltiptext">B-41</span>
+        <script>
+        function klikac41() {
+          ticket_price_sector.value = 'price_B';
+          ticket_seat_id_seq.value = 'B-41';
+        }
+        </script>
+      </div>
+      <div class="B-42" onclick= "klikac42()">
+        <span class="tooltiptext">B-42</span>
+        <script>
+        function klikac42() {
+          ticket_price_sector.value = 'price_B';
+          ticket_seat_id_seq.value = 'B-42';
+        }
+        </script>
+      </div>
+      <div class="B-43" onclick= "klikac43()">
+        <span class="tooltiptext">B-43</span>
+        <script>
+        function klikac43() {
+          ticket_price_sector.value = 'price_B';
+          ticket_seat_id_seq.value = 'B-43';
+        }
+        </script>
+      </div>
+      <div class="B-44" onclick= "klikac44()">
+        <span class="tooltiptext">B-44</span>
+        <script>
+        function klikac44() {
+          ticket_price_sector.value = 'price_B';
+          ticket_seat_id_seq.value = 'B-44';
+        }
+        </script>
+      </div>
+      <div class="B-45" onclick= "klikac45()">
+        <span class="tooltiptext">B-45</span>
+        <script>
+        function klikac45() {
+          ticket_price_sector.value = 'price_B';
+          ticket_seat_id_seq.value = 'B-45';
+        }
+        </script>
+      </div>
+      <div class="B-46" onclick= "klikac46()">
+        <span class="tooltiptext">B-46</span>
+        <script>
+        function klikac46() {
+          ticket_price_sector.value = 'price_B';
+          ticket_seat_id_seq.value = 'B-46';
+        }
+        </script>
+      </div>
+      <div class="B-47" onclick= "klikac47()">
+        <span class="tooltiptext">B-47</span>
+        <script>
+        function klikac47() {
+          ticket_price_sector.value = 'price_B';
+          ticket_seat_id_seq.value = 'B-47';
+        }
+        </script>
+      </div>
+      <div class="B-48" onclick= "klikac48()">
+        <span class="tooltiptext">B-48</span>
+        <script>
+        function klikac48() {
+          ticket_price_sector.value = 'price_B';
+          ticket_seat_id_seq.value = 'B-48';
+        }
+        </script>
+      </div>
+      <div class="B-49" onclick= "klikac49()">
+        <span class="tooltiptext">B-49</span>
+        <script>
+        function klikac49() {
+          ticket_price_sector.value = 'price_B';
+          ticket_seat_id_seq.value = 'B-49';
+        }
+        </script>
+      </div>
+      <div class="B-50" onclick= "klikac50()">
+        <span class="tooltiptext">B-50</span>
+        <script>
+        function klikac50() {
+          ticket_price_sector.value = 'price_B';
+          ticket_seat_id_seq.value = 'B-50';
+        }
+        </script>
+      </div>
+      <div class="B-51" onclick= "klikac51()">
+        <span class="tooltiptext">B-51</span>
+        <script>
+        function klikac51() {
+          ticket_price_sector.value = 'price_B';
+          ticket_seat_id_seq.value = 'B-51';
+        }
+        </script>
+      </div>
+      <div class="B-52" onclick= "klikac52()">
+        <span class="tooltiptext">B-52</span>
+        <script>
+        function klikac52() {
+          ticket_price_sector.value = 'price_B';
+          ticket_seat_id_seq.value = 'B-52';
+        }
+        </script>
+      </div>
+      <div class="B-53" onclick= "klikac53()">
+        <span class="tooltiptext">B-53</span>
+        <script>
+        function klikac53() {
+          ticket_price_sector.value = 'price_B';
+          ticket_seat_id_seq.value = 'B-53';
+        }
+        </script>
+      </div>
+      <div class="B-54" onclick= "klikac54()">
+        <span class="tooltiptext">B-54</span>
+        <script>
+        function klikac54() {
+          ticket_price_sector.value = 'price_B';
+          ticket_seat_id_seq.value = 'B-54';
+        }
+        </script>
+      </div>
+      <div class="B-55" onclick= "klikac55()">
+        <span class="tooltiptext">B-55</span>
+        <script>
+        function klikac55() {
+          ticket_price_sector.value = 'price_B';
+          ticket_seat_id_seq.value = 'B-55';
+        }
+        </script>
+      </div>
+      <div class="B-56" onclick= "klikac56()">
+        <span class="tooltiptext">B-56</span>
+        <script>
+        function klikac56() {
+          ticket_price_sector.value = 'price_B';
+          ticket_seat_id_seq.value = 'B-56';
+        }
+        </script>
+      </div>
+      <div class="B-57" onclick= "klikac57()">
+        <span class="tooltiptext">B-57</span>
+        <script>
+        function klikac57() {
+          ticket_price_sector.value = 'price_B';
+          ticket_seat_id_seq.value = 'B-57';
+        }
+        </script>
+      </div>
+      <div class="B-58" onclick= "klikac58()">
+        <span class="tooltiptext">B-58</span>
+        <script>
+        function klikac58() {
+          ticket_price_sector.value = 'price_B';
+          ticket_seat_id_seq.value = 'B-58';
+        }
+        </script>
+      </div>
+      <div class="B-59" onclick= "klikac59()">
+        <span class="tooltiptext">B-59</span>
+        <script>
+        function klikac59() {
+          ticket_price_sector.value = 'price_B';
+          ticket_seat_id_seq.value = 'B-59';
+        }
+        </script>
+      </div>
+      <div class="B-60" onclick= "klikac60()">
+        <span class="tooltiptext">B-60</span>
+        <script>
+        function klikac60() {
+          ticket_price_sector.value = 'price_B';
+          ticket_seat_id_seq.value = 'B-60';
+        }
+        </script>
+      </div>
+      <div class="B-61" onclick= "klikac61()">
+        <span class="tooltiptext">B-61</span>
+        <script>
+        function klikac61() {
+          ticket_price_sector.value = 'price_B';
+          ticket_seat_id_seq.value = 'B-61';
+        }
+        </script>
+      </div>
+      <div class="B-62" onclick= "klikac62()">
+        <span class="tooltiptext">B-62</span>
+        <script>
+        function klikac62() {
+          ticket_price_sector.value = 'price_B';
+          ticket_seat_id_seq.value = 'B-62';
+        }
+        </script>
+      </div>
+      <div class="B-63" onclick= "klikac63()">
+        <span class="tooltiptext">B-63</span>
+        <script>
+        function klikac63() {
+          ticket_price_sector.value = 'price_B';
+          ticket_seat_id_seq.value = 'B-63';
+        }
+        </script>
+      </div>
+      <div class="B-64" onclick= "klikac64()">
+        <span class="tooltiptext">B-64</span>
+        <script>
+        function klikac64() {
+          ticket_price_sector.value = 'price_B';
+          ticket_seat_id_seq.value = 'B-64';
+        }
+        </script>
+      </div>
+      <div class="B-65" onclick= "klikac65()">
+        <span class="tooltiptext">B-65</span>
+        <script>
+        function klikac65() {
+          ticket_price_sector.value = 'price_B';
+          ticket_seat_id_seq.value = 'B-65';
+        }
+        </script>
+      </div>
+      <div class="B-66" onclick= "klikac66()">
+        <span class="tooltiptext">B-66</span>
+        <script>
+        function klikac66() {
+          ticket_price_sector.value = 'price_B';
+          ticket_seat_id_seq.value = 'B-66';
+        }
+        </script>
+      </div>
+      <div class="B-67" onclick= "klikac67()">
+        <span class="tooltiptext">B-67</span>
+        <script>
+        function klikac67() {
+          ticket_price_sector.value = 'price_B';
+          ticket_seat_id_seq.value = 'B-67';
+        }
+        </script>
+      </div>
+      <div class="B-68" onclick= "klikac68()">
+        <span class="tooltiptext">B-68</span>
+        <script>
+        function klikac68() {
+          ticket_price_sector.value = 'price_B';
+          ticket_seat_id_seq.value = 'B-68';
+        }
+        </script>
+      </div>
+      <div class="B-69" onclick= "klikac69()">
+        <span class="tooltiptext">B-69</span>
+        <script>
+        function klikac69() {
+          ticket_price_sector.value = 'price_B';
+          ticket_seat_id_seq.value = 'B-69';
+        }
+        </script>
+      </div>
+      <div class="B-70" onclick= "klikac70()">
+        <span class="tooltiptext">B-70</span>
+        <script>
+        function klikac70() {
+          ticket_price_sector.value = 'price_B';
+          ticket_seat_id_seq.value = 'B-70';
+        }
+        </script>
+      </div>
+      <div class="B-71" onclick= "klikac71()">
+        <span class="tooltiptext">B-71</span>
+        <script>
+        function klikac71() {
+          ticket_price_sector.value = 'price_B';
+          ticket_seat_id_seq.value = 'B-71';
+        }
+        </script>
+      </div>
+      <div class="B-72" onclick= "klikac72()">
+        <span class="tooltiptext">B-72</span>
+        <script>
+        function klikac72() {
+          ticket_price_sector.value = 'price_B';
+          ticket_seat_id_seq.value = 'B-72';
+        }
+        </script>
+      </div>
+      <div class="B-73" onclick= "klikac73()">
+        <span class="tooltiptext">B-73</span>
+        <script>
+        function klikac73() {
+          ticket_price_sector.value = 'price_B';
+          ticket_seat_id_seq.value = 'B-73';
+        }
+        </script>
+      </div>
+      <div class="B-74" onclick= "klikac74()">
+        <span class="tooltiptext">B-74</span>
+        <script>
+        function klikac74() {
+          ticket_price_sector.value = 'price_B';
+          ticket_seat_id_seq.value = 'B-74';
+        }
+        </script>
+      </div>
+      <div class="B-75" onclick= "klikac75()">
+        <span class="tooltiptext">B-75</span>
+        <script>
+        function klikac75() {
+          ticket_price_sector.value = 'price_B';
+          ticket_seat_id_seq.value = 'B-75';
+        }
+        </script>
+      </div>
+      <div class="B-76" onclick= "klikac76()">
+        <span class="tooltiptext">B-76</span>
+        <script>
+        function klikac76() {
+          ticket_price_sector.value = 'price_B';
+          ticket_seat_id_seq.value = 'B-76';
+        }
+        </script>
+      </div>
+      <div class="B-77" onclick= "klikac77()">
+        <span class="tooltiptext">B-77</span>
+        <script>
+        function klikac77() {
+          ticket_price_sector.value = 'price_B';
+          ticket_seat_id_seq.value = 'B-77';
+        }
+        </script>
+      </div>
+      <div class="B-78" onclick= "klikac78()">
+        <span class="tooltiptext">B-78</span>
+        <script>
+        function klikac78() {
+          ticket_price_sector.value = 'price_B';
+          ticket_seat_id_seq.value = 'B-78';
+        }
+        </script>
+      </div>
+      <div class="B-79" onclick= "klikac79()">
+        <span class="tooltiptext">B-79</span>
+        <script>
+        function klikac79() {
+          ticket_price_sector.value = 'price_B';
+          ticket_seat_id_seq.value = 'B-79';
+        }
+        </script>
+      </div>
+      <div class="B-80" onclick= "klikac80()">
+        <span class="tooltiptext">B-80</span>
+        <script>
+        function klikac80() {
+          ticket_price_sector.value = 'price_B';
+          ticket_seat_id_seq.value = 'B-80';
+        }
+        </script>
+      </div>
+      <div class="B-81" onclick= "klikac81()">
+        <span class="tooltiptext">B-81</span>
+        <script>
+        function klikac81() {
+          ticket_price_sector.value = 'price_B';
+          ticket_seat_id_seq.value = 'B-81';
+        }
+        </script>
+      </div>
+      <div class="B-82" onclick= "klikac82()">
+        <span class="tooltiptext">B-82</span>
+        <script>
+        function klikac82() {
+          ticket_price_sector.value = 'price_B';
+          ticket_seat_id_seq.value = 'B-82';
+        }
+        </script>
+      </div>
+      <div class="B-83" onclick= "klikac83()">
+        <span class="tooltiptext">B-83</span>
+        <script>
+        function klikac83() {
+          ticket_price_sector.value = 'price_B';
+          ticket_seat_id_seq.value = 'B-83';
+        }
+        </script>
+      </div>
+      <div class="B-84" onclick= "klikac84()">
+        <span class="tooltiptext">B-84</span>
+        <script>
+        function klikac84() {
+          ticket_price_sector.value = 'price_B';
+          ticket_seat_id_seq.value = 'B-84';
+        }
+        </script>
+      </div>
+      <div class="B-85" onclick= "klikac85()">
+        <span class="tooltiptext">B-85</span>
+        <script>
+        function klikac85() {
+          ticket_price_sector.value = 'price_B';
+          ticket_seat_id_seq.value = 'B-85';
+        }
+        </script>
+      </div>
+      <div class="B-86" onclick= "klikac86()">
+        <span class="tooltiptext">B-86</span>
+        <script>
+        function klikac86() {
+          ticket_price_sector.value = 'price_B';
+          ticket_seat_id_seq.value = 'B-86';
+        }
+        </script>
+      </div>
+      <div class="B-87" onclick= "klikac87()">
+        <span class="tooltiptext">B-87</span>
+        <script>
+        function klikac87() {
+          ticket_price_sector.value = 'price_B';
+          ticket_seat_id_seq.value = 'B-87';
+        }
+        </script>
+      </div>
+      <div class="B-88" onclick= "klikac88()">
+        <span class="tooltiptext">B-88</span>
+        <script>
+        function klikac88() {
+          ticket_price_sector.value = 'price_B';
+          ticket_seat_id_seq.value = 'B-88';
+        }
+        </script>
+      </div>
+      <div class="B-89" onclick= "klikac89()">
+        <span class="tooltiptext">B-89</span>
+        <script>
+        function klikac89() {
+          ticket_price_sector.value = 'price_B';
+          ticket_seat_id_seq.value = 'B-89';
+        }
+        </script>
+      </div>
+      <div class="B-90" onclick= "klikac90()">
+        <span class="tooltiptext">B-90</span>
+        <script>
+        function klikac90() {
+          ticket_price_sector.value = 'price_B';
+          ticket_seat_id_seq.value = 'B-90';
+        }
+        </script>
+      </div>
+      <div class="B-91" onclick= "klikac91()">
+        <span class="tooltiptext">B-91</span>
+        <script>
+        function klikac91() {
+          ticket_price_sector.value = 'price_B';
+          ticket_seat_id_seq.value = 'B-91';
+        }
+        </script>
+      </div>
+      <div class="B-92" onclick= "klikac92()">
+        <span class="tooltiptext">B-92</span>
+        <script>
+        function klikac92() {
+          ticket_price_sector.value = 'price_B';
+          ticket_seat_id_seq.value = 'B-92';
+        }
+        </script>
+      </div>
+      <div class="B-93" onclick= "klikac93()">
+        <span class="tooltiptext">B-93</span>
+        <script>
+        function klikac93() {
+          ticket_price_sector.value = 'price_B';
+          ticket_seat_id_seq.value = 'B-93';
+        }
+        </script>
+      </div>
+      <div class="B-94" onclick= "klikac94()">
+        <span class="tooltiptext">B-94</span>
+        <script>
+        function klikac94() {
+          ticket_price_sector.value = 'price_B';
+          ticket_seat_id_seq.value = 'B-94';
+        }
+        </script>
+      </div>
+      <div class="B-95" onclick= "klikac95()">
+        <span class="tooltiptext">B-95</span>
+        <script>
+        function klikac95() {
+          ticket_price_sector.value = 'price_B';
+          ticket_seat_id_seq.value = 'B-95';
+        }
+        </script>
+      </div>
+      <div class="B-96" onclick= "klikac96()">
+        <span class="tooltiptext">B-96</span>
+        <script>
+        function klikac96() {
+          ticket_price_sector.value = 'price_B';
+          ticket_seat_id_seq.value = 'B-96';
+        }
+        </script>
+      </div>
+      <div class="B-97" onclick= "klikac97()">
+        <span class="tooltiptext">B-97</span>
+        <script>
+        function klikac97() {
+          ticket_price_sector.value = 'price_B';
+          ticket_seat_id_seq.value = 'B-97';
+        }
+        </script>
+      </div>
+      <div class="B-98" onclick= "klikac98()">
+        <span class="tooltiptext">B-98</span>
+        <script>
+        function klikac98() {
+          ticket_price_sector.value = 'price_B';
+          ticket_seat_id_seq.value = 'B-98';
+        }
+        </script>
+      </div>
+      <div class="B-99" onclick= "klikac99()">
+        <span class="tooltiptext">B-99</span>
+        <script>
+        function klikac99() {
+          ticket_price_sector.value = 'price_B';
+          ticket_seat_id_seq.value = 'B-99';
+        }
+        </script>
+      </div>
+      <div class="B-100" onclick= "klikac100()">
+        <span class="tooltiptext">B-100</span>
+        <script>
+        function klikac100() {
+          ticket_price_sector.value = 'price_B';
+          ticket_seat_id_seq.value = 'B-100';
+        }
+        </script>
+      </div>
+      <div class="D-1" onclick= "klikacz1()">
+        <span class="tooltiptext">D-1</span>
+        <script>
+        function klikacz1() {
+          ticket_price_sector.value = 'price_D';
+          ticket_seat_id_seq.value = 'D-1';
+        }
+        </script>
+      </div>
+      <div class="D-2" onclick= "klikacz2()">
+        <span class="tooltiptext">D-2</span>
+        <script>
+        function klikacz2() {
+          ticket_price_sector.value = 'price_D';
+          ticket_seat_id_seq.value = 'D-2';
+        }
+        </script>
+      </div>
+      <div class="D-3" onclick= "klikacz3()">
+        <span class="tooltiptext">D-3</span>
+        <script>
+        function klikacz3() {
+          ticket_price_sector.value = 'price_D';
+          ticket_seat_id_seq.value = 'D-3';
+        }
+        </script>
+      </div>
+      <div class="D-4" onclick= "klikacz4()">
+        <span class="tooltiptext">D-4</span>
+        <script>
+        function klikacz4() {
+          ticket_price_sector.value = 'price_D';
+          ticket_seat_id_seq.value = 'D-4';
+        }
+        </script>
+      </div>
+      <div class="D-5" onclick= "klikacz5()">
+        <span class="tooltiptext">D-5</span>
+        <script>
+        function klikacz5() {
+          ticket_price_sector.value = 'price_D';
+          ticket_seat_id_seq.value = 'D-5';
+        }
+        </script>
+      </div>
+      <div class="D-6" onclick= "klikacz6()">
+        <span class="tooltiptext">D-6</span>
+        <script>
+        function klikacz6() {
+          ticket_price_sector.value = 'price_D';
+          ticket_seat_id_seq.value = 'D-6';
+        }
+        </script>
+      </div>
+      <div class="D-7" onclick= "klikacz7()">
+        <span class="tooltiptext">D-7</span>
+        <script>
+        function klikacz7() {
+          ticket_price_sector.value = 'price_D';
+          ticket_seat_id_seq.value = 'D-7';
+        }
+        </script>
+      </div>
+      <div class="D-8" onclick= "klikacz8()"> 
+        <span class="tooltiptext">D-8</span>
+        <script>
+        function klikacz8() {
+          ticket_price_sector.value = 'price_D';
+          ticket_seat_id_seq.value = 'D-8';
+        }
+        </script>
+      </div>
+      <div class="D-9" onclick= "klikacz9()">
+        <span class="tooltiptext">D-9</span>
+        <script>
+        function klikacz9() {
+          ticket_price_sector.value = 'price_D';
+          ticket_seat_id_seq.value = 'D-9';
+        }
+        </script>
+      </div>
+      <div class="D-10" onclick= "klikacz10()">
+        <span class="tooltiptext">D-10</span>
+        <script>
+        function klikacz10() {
+          ticket_price_sector.value = 'price_D';
+          ticket_seat_id_seq.value = 'D-10';
+        }
+        </script>
+      </div>
+      <div class="D-11" onclick= "klikacz11()">
+        <span class="tooltiptext">D-11</span>
+        <script>
+        function klikacz11() {
+          ticket_price_sector.value = 'price_D';
+          ticket_seat_id_seq.value = 'D-11';
+        }
+        </script>
+      </div>
+      <div class="D-12" onclick= "klikacz12()">
+        <span class="tooltiptext">D-12</span>
+        <script>
+        function klikacz12() {
+          ticket_price_sector.value = 'price_D';
+          ticket_seat_id_seq.value = 'D-12';
+        }
+        </script>
+      </div>
+      <div class="D-13" onclick= "klikacz13()">
+        <span class="tooltiptext">D-13</span>
+        <script>
+        function klikacz13() {
+          ticket_price_sector.value = 'price_D';
+          ticket_seat_id_seq.value = 'D-13';
+        }
+        </script>
+      </div>
+      <div class="D-14" onclick= "klikacz14()">
+        <span class="tooltiptext">D-14</span>
+        <script>
+        function klikacz14() {
+          ticket_price_sector.value = 'price_D';
+          ticket_seat_id_seq.value = 'D-14';
+        }
+        </script>
+      </div>
+      <div class="D-15" onclick= "klikacz15()">
+        <span class="tooltiptext">D-15</span>
+        <script>
+        function klikacz15() {
+          ticket_price_sector.value = 'price_D';
+          ticket_seat_id_seq.value = 'D-15';
+        }
+        </script>
+      </div>
+      <div class="D-16" onclick= "klikacz16()">
+        <span class="tooltiptext">D-16</span>
+        <script>
+        function klikacz16() {
+          ticket_price_sector.value = 'price_D';
+          ticket_seat_id_seq.value = 'D-16';
+        }
+        </script>
+      </div>
+      <div class="D-17" onclick= "klikacz17()">
+        <span class="tooltiptext">D-17</span>
+        <script>
+        function klikacz17() {
+          ticket_price_sector.value = 'price_D';
+          ticket_seat_id_seq.value = 'D-17';
+        }
+        </script>
+      </div>
+      <div class="D-18" onclick= "klikacz18()">
+        <span class="tooltiptext">D-18</span>
+        <script>
+        function klikacz18() {
+          ticket_price_sector.value = 'price_D';
+          ticket_seat_id_seq.value = 'D-18';
+        }
+        </script>
+      </div>
+      <div class="D-19" onclick= "klikacz19()">
+        <span class="tooltiptext">D-19</span>
+        <script>
+        function klikacz19() {
+          ticket_price_sector.value = 'price_D';
+          ticket_seat_id_seq.value = 'D-19';
+        }
+        </script>
+      </div>
+      <div class="D-20" onclick= "klikacz20()">
+        <span class="tooltiptext">D-20</span>
+        <script>
+        function klikacz20() {
+          ticket_price_sector.value = 'price_D';
+          ticket_seat_id_seq.value = 'D-20';
+        }
+        </script>
+      </div>
+      <div class="D-21" onclick= "klikacz21()">
+        <span class="tooltiptext">D-21</span>
+        <script>
+        function klikacz21() {
+          ticket_price_sector.value = 'price_D';
+          ticket_seat_id_seq.value = 'D-21';
+        }
+        </script>
+      </div>
+      <div class="D-22" onclick= "klikacz22()">
+        <span class="tooltiptext">D-22</span>
+        <script>
+        function klikacz22() {
+          ticket_price_sector.value = 'price_D';
+          ticket_seat_id_seq.value = 'D-22';
+        }
+        </script>
+      </div>
+      <div class="D-23" onclick= "klikacz23()">
+        <span class="tooltiptext">D-23</span>
+        <script>
+        function klikacz23() {
+          ticket_price_sector.value = 'price_D';
+          ticket_seat_id_seq.value = 'D-23';
+        }
+        </script>
+      </div>
+      <div class="D-24" onclick= "klikacz24()">
+        <span class="tooltiptext">D-24</span>
+        <script>
+        function klikacz24() {
+          ticket_price_sector.value = 'price_D';
+          ticket_seat_id_seq.value = 'D-24';
+        }
+        </script>
+      </div>
+      <div class="D-25" onclick= "klikacz25()">
+        <span class="tooltiptext">D-25</span>
+        <script>
+        function klikacz25() {
+          ticket_price_sector.value = 'price_D';
+          ticket_seat_id_seq.value = 'D-25';
+        }
+        </script>
+      </div>
+      <div class="D-26" onclick= "klikacz26()">
+        <span class="tooltiptext">D-26</span>
+        <script>
+        function klikacz26() {
+          ticket_price_sector.value = 'price_D';
+          ticket_seat_id_seq.value = 'D-26';
+        }
+        </script>
+      </div>
+      <div class="D-27" onclick= "klikacz27()">
+        <span class="tooltiptext">D-27</span>
+        <script>
+        function klikacz27() {
+          ticket_price_sector.value = 'price_D';
+          ticket_seat_id_seq.value = 'D-27';
+        }
+        </script>
+      </div>
+      <div class="D-28" onclick= "klikacz28()">
+        <span class="tooltiptext">D-28</span>
+        <script>
+        function klikacz28() {
+          ticket_price_sector.value = 'price_D';
+          ticket_seat_id_seq.value = 'D-28';
+        }
+        </script>
+      </div>
+      <div class="D-29" onclick= "klikacz29()">
+        <span class="tooltiptext">D-29</span>
+        <script>
+        function klikacz29() {
+          ticket_price_sector.value = 'price_D';
+          ticket_seat_id_seq.value = 'D-29';
+        }
+        </script>
+      </div>
+      <div class="D-30" onclick= "klikacz30()">
+        <span class="tooltiptext">D-30</span>
+        <script>
+        function klikacz30() {
+          ticket_price_sector.value = 'price_D';
+          ticket_seat_id_seq.value = 'D-30';
+        }
+        </script>
+      </div>
+      <div class="D-31" onclick= "klikacz31()">
+        <span class="tooltiptext">D-31</span>
+        <script>
+        function klikacz31() {
+          ticket_price_sector.value = 'price_D';
+          ticket_seat_id_seq.value = 'D-31';
+        }
+        </script>
+      </div>
+      <div class="D-32" onclick= "klikacz32()">
+        <span class="tooltiptext">D-32</span>
+        <script>
+        function klikacz32() {
+          ticket_price_sector.value = 'price_D';
+          ticket_seat_id_seq.value = 'D-32';
+        }
+        </script>
+      </div>
+      <div class="D-33" onclick= "klikacz33()">
+        <span class="tooltiptext">D-33</span>
+        <script>
+        function klikacz33() {
+          ticket_price_sector.value = 'price_D';
+          ticket_seat_id_seq.value = 'D-33';
+        }
+        </script>
+      </div>
+      <div class="D-34" onclick= "klikacz34()">
+        <span class="tooltiptext">D-34</span>
+        <script>
+        function klikacz34() {
+          ticket_price_sector.value = 'price_D';
+          ticket_seat_id_seq.value = 'D-34';
+        }
+        </script>
+      </div>
+      <div class="D-35" onclick= "klikacz35()">
+        <span class="tooltiptext">D-35</span>
+        <script>
+        function klikacz35() {
+          ticket_price_sector.value = 'price_D';
+          ticket_seat_id_seq.value = 'D-35';
+        }
+        </script>
+      </div>
+      <div class="D-36" onclick= "klikacz36()">
+        <span class="tooltiptext">D-36</span>
+        <script>
+        function klikacz36() {
+          ticket_price_sector.value = 'price_D';
+          ticket_seat_id_seq.value = 'D-36';
+        }
+        </script>
+      </div>
+      <div class="D-37" onclick= "klikacz37()">
+        <span class="tooltiptext">D-37</span>
+        <script>
+        function klikacz37() {
+          ticket_price_sector.value = 'price_D';
+          ticket_seat_id_seq.value = 'D-37';
+        }
+        </script>
+      </div>
+      <div class="D-38" onclick= "klikacz38()">
+        <span class="tooltiptext">D-38</span>
+        <script>
+        function klikacz38() {
+          ticket_price_sector.value = 'price_D';
+          ticket_seat_id_seq.value = 'D-38';
+        }
+        </script>
+      </div>
+      <div class="D-39" onclick= "klikacz39()">
+        <span class="tooltiptext">D-39</span>
+        <script>
+        function klikacz39() {
+          ticket_price_sector.value = 'price_D';
+          ticket_seat_id_seq.value = 'D-39';
+        }
+        </script>
+      </div>
+      <div class="D-40" onclick= "klikacz40()">
+        <span class="tooltiptext">D-40</span>
+        <script>
+        function klikacz40() {
+          ticket_price_sector.value = 'price_D';
+          ticket_seat_id_seq.value = 'D-40';
+        }
+        </script>
+      </div>
+      <div class="D-41" onclick= "klikacz41()">
+        <span class="tooltiptext">D-41</span>
+        <script>
+        function klikacz41() {
+          ticket_price_sector.value = 'price_D';
+          ticket_seat_id_seq.value = 'D-41';
+        }
+        </script>
+      </div>
+      <div class="D-42" onclick= "klikacz42()">
+        <span class="tooltiptext">D-42</span>
+        <script>
+        function klikacz42() {
+          ticket_price_sector.value = 'price_D';
+          ticket_seat_id_seq.value = 'D-42';
+        }
+        </script>
+      </div>
+      <div class="D-43" onclick= "klikacz43()">
+        <span class="tooltiptext">D-43</span>
+        <script>
+        function klikacz43() {
+          ticket_price_sector.value = 'price_D';
+          ticket_seat_id_seq.value = 'D-43';
+        }
+        </script>
+      </div>
+      <div class="D-44" onclick= "klikacz44()">
+        <span class="tooltiptext">D-44</span>
+        <script>
+        function klikacz44() {
+          ticket_price_sector.value = 'price_D';
+          ticket_seat_id_seq.value = 'D-44';
+        }
+        </script>
+      </div>
+      <div class="D-45" onclick= "klikacz45()">
+        <span class="tooltiptext">D-45</span>
+        <script>
+        function klikacz45() {
+          ticket_price_sector.value = 'price_D';
+          ticket_seat_id_seq.value = 'D-45';
+        }
+        </script>
+      </div>
+      <div class="D-46" onclick= "klikacz46()">
+        <span class="tooltiptext">D-46</span>
+        <script>
+        function klikacz46() {
+          ticket_price_sector.value = 'price_D';
+          ticket_seat_id_seq.value = 'D-46';
+        }
+        </script>
+      </div>
+      <div class="D-47" onclick= "klikacz47()">
+        <span class="tooltiptext">D-47</span>
+        <script>
+        function klikacz47() {
+          ticket_price_sector.value = 'price_D';
+          ticket_seat_id_seq.value = 'D-47';
+        }
+        </script>
+      </div>
+      <div class="D-48" onclick= "klikacz48()">
+        <span class="tooltiptext">D-48</span>
+        <script>
+        function klikacz48() {
+          ticket_price_sector.value = 'price_D';
+          ticket_seat_id_seq.value = 'D-48';
+        }
+        </script>
+      </div>
+      <div class="D-49" onclick= "klikacz49()">
+        <span class="tooltiptext">D-49</span>
+        <script>
+        function klikacz49() {
+          ticket_price_sector.value = 'price_D';
+          ticket_seat_id_seq.value = 'D-49';
+        }
+        </script>
+      </div>
+      <div class="D-50" onclick= "klikacz50()">
+        <span class="tooltiptext">D-50</span>
+        <script>
+        function klikacz50() {
+          ticket_price_sector.value = 'price_D';
+          ticket_seat_id_seq.value = 'D-50';
+        }
+        </script>
+      </div>
+      <div class="D-51" onclick= "klikacz51()">
+        <span class="tooltiptext">D-51</span>
+        <script>
+        function klikacz51() {
+          ticket_price_sector.value = 'price_D';
+          ticket_seat_id_seq.value = 'D-51';
+        }
+        </script>
+      </div>
+      <div class="D-52" onclick= "klikacz52()">
+        <span class="tooltiptext">D-52</span>
+        <script>
+        function klikacz52() {
+          ticket_price_sector.value = 'price_D';
+          ticket_seat_id_seq.value = 'D-52';
+        }
+        </script>
+      </div>
+      <div class="D-53" onclick= "klikacz53()">
+        <span class="tooltiptext">D-53</span>
+        <script>
+        function klikacz53() {
+          ticket_price_sector.value = 'price_D';
+          ticket_seat_id_seq.value = 'D-53';
+        }
+        </script>
+      </div>
+      <div class="D-54" onclick= "klikacz54()">
+        <span class="tooltiptext">D-54</span>
+        <script>
+        function klikacz54() {
+          ticket_price_sector.value = 'price_D';
+          ticket_seat_id_seq.value = 'D-54';
+        }
+        </script>
+      </div>
+      <div class="D-55" onclick= "klikacz55()">
+        <span class="tooltiptext">D-55</span>
+        <script>
+        function klikacz55() {
+          ticket_price_sector.value = 'price_D';
+          ticket_seat_id_seq.value = 'D-55';
+        }
+        </script>
+      </div>
+      <div class="D-56" onclick= "klikacz56()">
+        <span class="tooltiptext">D-56</span>
+        <script>
+        function klikacz56() {
+          ticket_price_sector.value = 'price_D';
+          ticket_seat_id_seq.value = 'D-56';
+        }
+        </script>
+      </div>
+      <div class="D-57" onclick= "klikacz57()">
+        <span class="tooltiptext">D-57</span>
+        <script>
+        function klikacz57() {
+          ticket_price_sector.value = 'price_D';
+          ticket_seat_id_seq.value = 'D-57';
+        }
+        </script>
+      </div>
+      <div class="D-58" onclick= "klikacz58()">
+        <span class="tooltiptext">D-58</span>
+        <script>
+        function klikacz58() {
+          ticket_price_sector.value = 'price_D';
+          ticket_seat_id_seq.value = 'D-58';
+        }
+        </script>
+      </div>
+      <div class="D-59" onclick= "klikacz59()">
+        <span class="tooltiptext">D-59</span>
+        <script>
+        function klikacz59() {
+          ticket_price_sector.value = 'price_D';
+          ticket_seat_id_seq.value = 'D-59';
+        }
+        </script>
+      </div>
+      <div class="D-60" onclick= "klikacz60()">
+        <span class="tooltiptext">D-60</span>
+        <script>
+        function klikacz60() {
+          ticket_price_sector.value = 'price_D';
+          ticket_seat_id_seq.value = 'D-60';
+        }
+        </script>
+      </div>
+      <div class="C-1" onclick= "klikanie1()">
+        <span class="tooltiptext">C-1</span>
+        <script>
+        function klikanie1() {
+          ticket_price_sector.value = 'price_C';
+          ticket_seat_id_seq.value = 'C-1';
+        }
+        </script>
+      </div>
+      <div class="C-2" onclick= "klikanie2()">
+        <span class="tooltiptext">C-2</span>
+        <script>
+        function klikanie2() {
+          ticket_price_sector.value = 'price_C';
+          ticket_seat_id_seq.value = 'C-2';
+        }
+        </script>
+      </div>
+      <div class="C-3" onclick= "klikanie3()">
+        <span class="tooltiptext">C-3</span>
+        <script>
+        function klikanie3() {
+          ticket_price_sector.value = 'price_C';
+          ticket_seat_id_seq.value = 'C-3';
+        }
+        </script>
+      </div>
+      <div class="C-4" onclick= "klikanie4()">
+        <span class="tooltiptext">C-4</span>
+        <script>
+        function klikanie4() {
+          ticket_price_sector.value = 'price_C';
+          ticket_seat_id_seq.value = 'C-4';
+        }
+        </script>
+      </div>
+      <div class="C-5" onclick= "klikanie5()">
+        <span class="tooltiptext">C-5</span>
+        <script>
+        function klikanie5() {
+          ticket_price_sector.value = 'price_C';
+          ticket_seat_id_seq.value = 'C-5';
+        }
+        </script>
+      </div>
+      <div class="C-6" onclick= "klikanie6()">
+        <span class="tooltiptext">C-6</span>
+        <script>
+        function klikanie6() {
+          ticket_price_sector.value = 'price_C';
+          ticket_seat_id_seq.value = 'C-6';
+        }
+        </script>
+      </div>
+      <div class="C-7" onclick= "klikanie7()">
+        <span class="tooltiptext">C-7</span>
+        <script>
+        function klikanie7() {
+          ticket_price_sector.value = 'price_C';
+          ticket_seat_id_seq.value = 'C-7';
+        }
+        </script>
+      </div>
+      <div class="C-8" onclick= "klikanie8()">
+        <span class="tooltiptext">C-8</span>
+        <script>
+        function klikanie8() {
+          ticket_price_sector.value = 'price_C';
+          ticket_seat_id_seq.value = 'C-8';
+        }
+        </script>
+      </div>
+      <div class="C-9" onclick= "klikanie9()">
+        <span class="tooltiptext">C-9</span>
+        <script>
+        function klikanie9() {
+          ticket_price_sector.value = 'price_C';
+          ticket_seat_id_seq.value = 'C-9';
+        }
+        </script>
+      </div>
+      <div class="C-10" onclick= "klikanie10()">
+        <span class="tooltiptext">C-10</span>
+        <script>
+        function klikanie10() {
+          ticket_price_sector.value = 'price_C';
+          ticket_seat_id_seq.value = 'C-10';
+        }
+        </script>
+      </div>
+      <div class="C-11" onclick= "klikanie11()">
+        <span class="tooltiptext">C-11</span>
+        <script>
+        function klikanie11() {
+          ticket_price_sector.value = 'price_C';
+          ticket_seat_id_seq.value = 'C-11';
+        }
+        </script>
+      </div>
+      <div class="C-12" onclick= "klikanie12()">
+        <span class="tooltiptext">C-12</span>
+        <script>
+        function klikanie12() {
+          ticket_price_sector.value = 'price_C';
+          ticket_seat_id_seq.value = 'C-12';
+        }
+        </script>
+      </div>
+      <div class="C-13" onclick= "klikanie13()">
+        <span class="tooltiptext">C-13</span>
+        <script>
+        function klikanie13() {
+          ticket_price_sector.value = 'price_C';
+          ticket_seat_id_seq.value = 'C-13';
+        }
+        </script>
+      </div>
+      <div class="C-14" onclick= "klikanie14()">
+        <span class="tooltiptext">C-14</span>
+        <script>
+        function klikanie14() {
+          ticket_price_sector.value = 'price_C';
+          ticket_seat_id_seq.value = 'C-14';
+        }
+        </script>
+      </div>
+      <div class="C-15" onclick= "klikanie15()">
+        <span class="tooltiptext">C-15</span>
+        <script>
+        function klikanie15() {
+          ticket_price_sector.value = 'price_C';
+          ticket_seat_id_seq.value = 'C-15';
+        }
+        </script>
+      </div>
+      <div class="C-16" onclick= "klikanie16()">
+        <span class="tooltiptext">C-16</span>
+        <script>
+        function klikanie16() {
+          ticket_price_sector.value = 'price_C';
+          ticket_seat_id_seq.value = 'C-16';
+        }
+        </script>
+      </div>
+      <div class="C-17" onclick= "klikanie17()">
+        <span class="tooltiptext">C-17</span>
+        <script>
+        function klikanie17() {
+          ticket_price_sector.value = 'price_C';
+          ticket_seat_id_seq.value = 'C-17';
+        }
+        </script>
+      </div>
+      <div class="C-18" onclick= "klikanie18()">
+        <span class="tooltiptext">C-18</span>
+        <script>
+        function klikanie18() {
+          ticket_price_sector.value = 'price_C';
+          ticket_seat_id_seq.value = 'C-18';
+        }
+        </script>
+      </div>
+      <div class="C-19" onclick= "klikanie19()">
+        <span class="tooltiptext">C-19</span>
+        <script>
+        function klikanie19() {
+          ticket_price_sector.value = 'price_C';
+          ticket_seat_id_seq.value = 'C-19';
+        }
+        </script>
+      </div>
+      <div class="C-20" onclick= "klikanie20()">
+        <span class="tooltiptext">C-20</span>
+        <script>
+        function klikanie20() {
+          ticket_price_sector.value = 'price_C';
+          ticket_seat_id_seq.value = 'C-20';
+        }
+        </script>
+      </div>
+      <div class="C-21" onclick= "klikanie21()">
+        <span class="tooltiptext">C-21</span>
+        <script>
+        function klikanie21() {
+          ticket_price_sector.value = 'price_C';
+          ticket_seat_id_seq.value = 'C-21';
+        }
+        </script>
+      </div>
+      <div class="C-22" onclick= "klikanie22()">
+        <span class="tooltiptext">C-22</span>
+        <script>
+        function klikanie22() {
+          ticket_price_sector.value = 'price_C';
+          ticket_seat_id_seq.value = 'C-22';
+        }
+        </script>
+      </div>
+      <div class="C-23" onclick= "klikanie23()">
+        <span class="tooltiptext">C-23</span>
+        <script>
+        function klikanie23() {
+          ticket_price_sector.value = 'price_C';
+          ticket_seat_id_seq.value = 'C-23';
+        }
+        </script>
+      </div>
+      <div class="C-24" onclick= "klikanie24()">
+        <span class="tooltiptext">C-24</span>
+        <script>
+        function klikanie24() {
+          ticket_price_sector.value = 'price_C';
+          ticket_seat_id_seq.value = 'C-24';
+        }
+        </script>
+      </div>
+      <div class="C-25" onclick= "klikanie25()">
+        <span class="tooltiptext">C-25</span>
+        <script>
+        function klikanie25() {
+          ticket_price_sector.value = 'price_C';
+          ticket_seat_id_seq.value = 'C-25';
+        }
+        </script>
+      </div>
+      <div class="C-26" onclick= "klikanie26()">
+        <span class="tooltiptext">C-26</span>
+        <script>
+        function klikanie26() {
+          ticket_price_sector.value = 'price_C';
+          ticket_seat_id_seq.value = 'C-26';
+        }
+        </script>
+      </div>
+      <div class="C-27" onclick= "klikanie27()">
+        <span class="tooltiptext">C-27</span>
+        <script>
+        function klikanie27() {
+          ticket_price_sector.value = 'price_C';
+          ticket_seat_id_seq.value = 'C-27';
+        }
+        </script>
+      </div>
+      <div class="C-28" onclick= "klikanie28()">
+        <span class="tooltiptext">C-28</span>
+        <script>
+        function klikanie28() {
+          ticket_price_sector.value = 'price_C';
+          ticket_seat_id_seq.value = 'C-28';
+        }
+        </script>
+      </div>
+      <div class="C-29" onclick= "klikanie29()">
+        <span class="tooltiptext">C-29</span>
+        <script>
+        function klikanie29() {
+          ticket_price_sector.value = 'price_C';
+          ticket_seat_id_seq.value = 'C-29';
+        }
+        </script>
+      </div>
+      <div class="C-30" onclick= "klikanie30()">
+        <span class="tooltiptext">C-30</span>
+        <script>
+        function klikanie30() {
+          ticket_price_sector.value = 'price_C';
+          ticket_seat_id_seq.value = 'C-30';
+        }
+        </script>
+      </div>
+      <div class="C-31" onclick= "klikanie31()">
+        <span class="tooltiptext">C-31</span>
+        <script>
+        function klikanie31() {
+          ticket_price_sector.value = 'price_C';
+          ticket_seat_id_seq.value = 'C-31';
+        }
+        </script>
+      </div>
+      <div class="C-32" onclick= "klikanie32()">
+        <span class="tooltiptext">C-32</span>
+        <script>
+        function klikanie32() {
+          ticket_price_sector.value = 'price_C';
+          ticket_seat_id_seq.value = 'C-32';
+        }
+        </script>
+      </div>
+      <div class="C-33" onclick= "klikanie33()">
+        <span class="tooltiptext">C-33</span>
+        <script>
+        function klikanie33() {
+          ticket_price_sector.value = 'price_C';
+          ticket_seat_id_seq.value = 'C-33';
+        }
+        </script>
+      </div>
+      <div class="C-34" onclick= "klikanie34()">
+        <span class="tooltiptext">C-34</span>
+        <script>
+        function klikanie34() {
+          ticket_price_sector.value = 'price_C';
+          ticket_seat_id_seq.value = 'C-34';
+        }
+        </script>
+      </div>
+      <div class="C-35" onclick= "klikanie35()">
+        <span class="tooltiptext">C-35</span>
+        <script>
+        function klikanie35() {
+          ticket_price_sector.value = 'price_C';
+          ticket_seat_id_seq.value = 'C-35';
+        }
+        </script>
+      </div>
+      <div class="C-36" onclick= "klikanie36()">
+        <span class="tooltiptext">C-36</span>
+        <script>
+        function klikanie36() {
+          ticket_price_sector.value = 'price_C';
+          ticket_seat_id_seq.value = 'C-36';
+        }
+        </script>
+      </div>
+      <div class="C-37" onclick= "klikanie37()">
+        <span class="tooltiptext">C-37</span>
+        <script>
+        function klikanie37() {
+          ticket_price_sector.value = 'price_C';
+          ticket_seat_id_seq.value = 'C-37';
+        }
+        </script>
+      </div>
+      <div class="C-38" onclick= "klikanie38()">
+        <span class="tooltiptext">C-38</span>
+        <script>
+        function klikanie38() {
+          ticket_price_sector.value = 'price_C';
+          ticket_seat_id_seq.value = 'C-38';
+        }
+        </script>
+      </div>
+      <div class="C-39" onclick= "klikanie39()">
+        <span class="tooltiptext">C-39</span>
+        <script>
+        function klikanie39() {
+          ticket_price_sector.value = 'price_C';
+          ticket_seat_id_seq.value = 'C-39';
+        }
+        </script>
+      </div>
+      <div class="C-40" onclick= "klikanie40()">
+        <span class="tooltiptext">C-40</span>
+        <script>
+        function klikanie40() {
+          ticket_price_sector.value = 'price_C';
+          ticket_seat_id_seq.value = 'C-40';
+        }
+        </script>
+      </div>
+      <div class="C-41" onclick= "klikanie41()">
+        <span class="tooltiptext">C-41</span>
+        <script>
+        function klikanie41() {
+          ticket_price_sector.value = 'price_C';
+          ticket_seat_id_seq.value = 'C-41';
+        }
+        </script>
+      </div>
+      <div class="C-42" onclick= "klikanie42()">
+        <span class="tooltiptext">C-42</span>
+        <script>
+        function klikanie42() {
+          ticket_price_sector.value = 'price_C';
+          ticket_seat_id_seq.value = 'C-42';
+        }
+        </script>
+      </div>
+      <div class="C-43" onclick= "klikanie43()">
+        <span class="tooltiptext">C-43</span>
+        <script>
+        function klikanie43() {
+          ticket_price_sector.value = 'price_C';
+          ticket_seat_id_seq.value = 'C-43';
+        }
+        </script>
+      </div>
+      <div class="C-44" onclick= "klikanie44()">
+        <span class="tooltiptext">C-44</span>
+        <script>
+        function klikanie44() {
+          ticket_price_sector.value = 'price_C';
+          ticket_seat_id_seq.value = 'C-44';
+        }
+        </script>
+      </div>
+      <div class="C-45" onclick= "klikanie45()">
+        <span class="tooltiptext">C-45</span>
+        <script>
+        function klikanie45() {
+          ticket_price_sector.value = 'price_C';
+          ticket_seat_id_seq.value = 'C-45';
+        }
+        </script>
+      </div>
+      <div class="C-46" onclick= "klikanie46()">
+        <span class="tooltiptext">C-46</span>
+        <script>
+        function klikanie46() {
+          ticket_price_sector.value = 'price_C';
+          ticket_seat_id_seq.value = 'C-46';
+        }
+        </script>
+      </div>
+      <div class="C-47" onclick= "klikanie47()">
+        <span class="tooltiptext">C-47</span>
+        <script>
+        function klikanie47() {
+          ticket_price_sector.value = 'price_C';
+          ticket_seat_id_seq.value = 'C-47';
+        }
+        </script>
+      </div>
+      <div class="C-48" onclick= "klikanie48()">
+        <span class="tooltiptext">C-48</span>
+        <script>
+        function klikanie48() {
+          ticket_price_sector.value = 'price_C';
+          ticket_seat_id_seq.value = 'C-48';
+        }
+        </script>
+      </div>
+      <div class="C-49" onclick= "klikanie49()">
+        <span class="tooltiptext">C-49</span>
+        <script>
+        function klikanie49() {
+          ticket_price_sector.value = 'price_C';
+          ticket_seat_id_seq.value = 'C-49';
+        }
+        </script>
+      </div>
+      <div class="C-50" onclick= "klikanie50()">
+        <span class="tooltiptext">C-50</span>
+        <script>
+        function klikanie50() {
+          ticket_price_sector.value = 'price_C';
+          ticket_seat_id_seq.value = 'C-50';
+        }
+        </script>
+      </div>
+      <div class="C-51" onclick= "klikanie51()">
+        <span class="tooltiptext">C-51</span>
+        <script>
+        function klikanie51() {
+          ticket_price_sector.value = 'price_C';
+          ticket_seat_id_seq.value = 'C-51';
+        }
+        </script>
+      </div>
+      <div class="C-52" onclick= "klikanie52()">
+        <span class="tooltiptext">C-52</span>
+        <script>
+        function klikanie52() {
+          ticket_price_sector.value = 'price_C';
+          ticket_seat_id_seq.value = 'C-52';
+        }
+        </script>
+      </div>
+      <div class="C-53" onclick= "klikanie53()">
+        <span class="tooltiptext">C-53</span>
+        <script>
+        function klikanie53() {
+          ticket_price_sector.value = 'price_C';
+          ticket_seat_id_seq.value = 'C-53';
+        }
+        </script>
+      </div>
+      <div class="C-54" onclick= "klikanie54()">
+        <span class="tooltiptext">C-54</span>
+        <script>
+        function klikanie54() {
+          ticket_price_sector.value = 'price_C';
+          ticket_seat_id_seq.value = 'C-54';
+        }
+        </script>
+      </div>
+      <div class="C-55" onclick= "klikanie55()">
+        <span class="tooltiptext">C-55</span>
+        <script>
+        function klikanie55() {
+          ticket_price_sector.value = 'price_C';
+          ticket_seat_id_seq.value = 'C-55';
+        }
+        </script>
+      </div>
+      <div class="C-56" onclick= "klikanie56()">
+        <span class="tooltiptext">C-56</span>
+        <script>
+        function klikanie56() {
+          ticket_price_sector.value = 'price_C';
+          ticket_seat_id_seq.value = 'C-56';
+        }
+        </script>
+      </div>
+      <div class="C-57" onclick= "klikanie57()">
+        <span class="tooltiptext">C-57</span>
+        <script>
+        function klikanie57() {
+          ticket_price_sector.value = 'price_C';
+          ticket_seat_id_seq.value = 'C-57';
+        }
+        </script>
+      </div>
+      <div class="C-58" onclick= "klikanie58()">
+        <span class="tooltiptext">C-58</span>
+        <script>
+        function klikanie58() {
+          ticket_price_sector.value = 'price_C';
+          ticket_seat_id_seq.value = 'C-58';
+        }
+        </script>
+      </div>
+      <div class="C-59" onclick= "klikanie59()">
+        <span class="tooltiptext">C-59</span>
+        <script>
+        function klikanie59() {
+          ticket_price_sector.value = 'price_C';
+          ticket_seat_id_seq.value = 'C-59';
+        }
+        </script>
+      </div>
+      <div class="C-60" onclick= "klikanie60()">
+        <span class="tooltiptext">C-60</span>
+        <script>
+        function klikanie60() {
+          ticket_price_sector.value = 'price_C';
+          ticket_seat_id_seq.value = 'C-60';
+        }
+        </script>
+      </div>
+      <div class="C-61" onclick= "klikanie61()">
+        <span class="tooltiptext">C-61</span>
+        <script>
+        function klikanie61() {
+          ticket_price_sector.value = 'price_C';
+          ticket_seat_id_seq.value = 'C-61';
+        }
+        </script>
+      </div>
+      <div class="C-62" onclick= "klikanie62()">
+        <span class="tooltiptext">C-62</span>
+        <script>
+        function klikanie62() {
+          ticket_price_sector.value = 'price_C';
+          ticket_seat_id_seq.value = 'C-62';
+        }
+        </script>
+      </div>
+      <div class="C-63" onclick= "klikanie63()">
+        <span class="tooltiptext">C-63</span>
+        <script>
+        function klikanie63() {
+          ticket_price_sector.value = 'price_C';
+          ticket_seat_id_seq.value = 'C-63';
+        }
+        </script>
+      </div>
+      <div class="C-64" onclick= "klikanie64()">
+        <span class="tooltiptext">C-64</span>
+        <script>
+        function klikanie64() {
+          ticket_price_sector.value = 'price_C';
+          ticket_seat_id_seq.value = 'C-64';
+        }
+        </script>
+      </div>
+      <div class="C-65" onclick= "klikanie65()">
+        <span class="tooltiptext">C-65</span>
+        <script>
+        function klikanie65() {
+          ticket_price_sector.value = 'price_C';
+          ticket_seat_id_seq.value = 'C-65';
+        }
+        </script>
+      </div>
+      </div>
+  </body>
+</html>
+

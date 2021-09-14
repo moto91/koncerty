@@ -1,0 +1,25 @@
+<p id="komunikat"><%= flash[:komunikat] %></p>
+<p>
+  <strong>Artist:</strong>
+  <%= @event.artist %>
+</p>
+
+<p>
+  <strong>Price range</strong>
+  <%= @event.price_D.to_s + " - " + @event.price_GC.to_s %>
+</p>
+
+<p>
+  <strong>Event description:</strong>
+  <%= @event.description %>
+</p>
+
+<p>
+  <strong>Event date:</strong>
+  <%= @event.event_date %>
+</p>
+
+<%=render "new_ticket", ticket: current_user.tickets.new( :event_id=>@event.id) %>
+<%= render "tickets_list", tickets: Ticket.where(event_id: @event.id) %>
+
+<button type="button" class="btn btn-primary"><%= link_to 'Back', events_index_path %></button>
