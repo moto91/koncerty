@@ -11,45 +11,46 @@
 
   <div class="field">
     <%= form.label :artist %>
-    <%= form.text_field :artist %>
+    <%= form.text_field :artist, class: "event6" %>
   </div>
 
   <div class="field">
     <%= form.label :description %>
-    <%= form.text_area :description %>
+    <%= form.text_area :description, class: "event7" %>
   </div>
 
   <div class="field">
-  <%= form.label :price_A %>
-  <%= form.text_field :price_A %>
+  <%= form.label :price_A, value="Price A" %>
+  <%= form.text_field :price_A, class: "event1" %>
 </div>
 
 <div class="field">
-<%= form.label :price_B %>
-<%= form.text_field :price_B %>
+<%= form.label :price_B, value="Price B" %>
+<%= form.text_field :price_B, class: "event2" %>
 </div>
 
 <div class="field">
-<%= form.label :price_C %>
-<%= form.text_field :price_C %>
+<%= form.label :price_C, value="Price C" %>
+<%= form.text_field :price_C, class: "event3" %>
 </div>
 
 <div class="field">
-<%= form.label :price_D %>
-<%= form.text_field :price_D %>
+<%= form.label :price_D, value="Price D" %>
+<%= form.text_field :price_D, class: "event4" %>
 </div>
 
 <div class="field">
-<%= form.label :price_GC %>
-<%= form.text_field :price_GC %>
+<%= form.label :price_GC, value="Price GC" %>
+<%= form.text_field :price_GC, class: "event5" %>
 </div>
 
 <div class="field">
     <%= form.label :event_date %>
-    <%= form.date_field :event_date %>
+    <%= form.date_field :event_date, class: "event8" %>
   </div>
  
-  <div class="actions">
-    <%= form.submit %>
+  <div class="actions2">
+    <%= form.submit value="Create Event", class: "create"%>
   </div>
+
 <% end %>

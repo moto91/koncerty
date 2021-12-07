@@ -13,46 +13,51 @@
     </div>
   <% end %>
 
-  <div class="field">
+  <div class="field2">
     <%= form.label :name %>
-    <%= form.text_field :name %>
+    <%= form.text_field :name , class: "ticket1"%>
   </div>
 
-  <div class="field">
-    <%= form.label :seat_id_seq %>
-    <%= form.text_field :seat_id_seq %>
+  <div class="field2">
+    <%= form.label :seat_id_seq, value= "Seat number" %>
+    <%= form.text_field :seat_id_seq, class: "ticket2" %>
   </div>
 
-  <div class="field">
+  <div class="field2">
     <%= form.label :address %>
-    <%= form.text_area :address %>
+    <%= form.text_area :address, class: "ticket3" %>
   </div>
 
-  <div class="field">
+  <div class="field2">
+  <%= form.label :price_sector %>
+  <%= form.text_field :price_sector, class: "sector" %>
+  </div>
+
+  <div class="field2">
     <%= form.label :price %>
-    <%= form.text_field :price %>
+    <%= form.text_field :price, class: "ticket4" %>
   </div>
 
-  <div class="field">
+  <div class="field2">
     <%= form.label :email_address %>
-    <%= form.text_field :email_address %>
+    <%= form.text_field :email_address, class: "ticket5" %>
   </div>
   
-  <div class="field">
+  <div class="field2">
     <%= form.label :phone %>
-    <%= form.text_field :phone %>
+    <%= form.text_field :phone, class: "ticket6" %>
   </div>
 
-  <div class="field">
+  <div class="field2">
   <%= form.hidden_field :event_id %>
   </div>
 
-  <div class="field">
+  <div class="field2">
   <%= form.hidden_field :user_id %>
   </div>
 
-  <div class="actions">
-    <%= form.submit %>
+  <div class="actions1">
+    <%= form.submit "Create Ticket", class: "create" %>
   </div>
 
 <% end %>

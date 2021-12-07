@@ -1,12 +1,15 @@
 <p id="notice"><%= notice %></p>
 
+<div>
+<h6>Ticket details</h6>
+<div>
 <p>
   <strong>Name:</strong>
   <%= @ticket.name %>
 </p>
 
 <p>
-  <strong>Seat id seq:</strong>
+  <strong>Seat number:</strong>
   <%= @ticket.seat_id_seq %>
 </p>
 
@@ -33,6 +36,8 @@
   <strong>Event ID:</strong>
   <%= @ticket.event_id %>
 </p>
+</div>
+</div>
 
 <% if @ticket.user == current_user %>
 <%= link_to 'Edit', edit_ticket_path(@ticket) %> |

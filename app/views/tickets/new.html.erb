@@ -1,7 +1,38 @@
+<div class="ticket_form">
+<div class="new_ticket">
 <h1>New Ticket</h1>
-
 <%= render 'form', ticket: @ticket %>
-<%= render 'mapka'%>
+<div class="container2">
+
+<div class="A">
+<span class="tooltiptext">A</span>
+</div>
+<div class="sectorA"><p>- Price A</p></div>
+<div class="B">
+<span class="tooltiptext">B</span>
+</div>
+<div class="sectorB"><p>- Price B</p></div>
+<div class="C">
+<span class="tooltiptext">C</span>
+</div>
+<div class="sectorC"><p>- Price C</p></div>
+<div class="D">
+<span class="tooltiptext">D</span>
+</div>
+<div class="sectorD"><p>- Price D</p></div>
+<div class="G">
+<span class="tooltiptext">G</span>
+</div>
+<div class="sectorG"><p>- Price GC</p></div>
+
+</div>
+</div>
+<div class="venue_map">
+<%= render 'mapka' %>
+</div>
+</div>
+<div class="list">
 <%= render "events_list", events:Event.all %>
+</div>
 
 <%= link_to 'Back', tickets_path %>

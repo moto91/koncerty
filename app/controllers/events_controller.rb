@@ -17,7 +17,8 @@ class EventsController < ApplicationController
       redirect_to "/events/#{@event.id}"
     else
       render 'new'
-    end  
+    end
+    write_json  
   end
   
   def show

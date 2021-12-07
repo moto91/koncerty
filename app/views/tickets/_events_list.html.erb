@@ -1,12 +1,16 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Events</h1>
+<h5>Events</h5>
 
 <table>
   <thead>
     <tr>
       <th>Artist</th>
-      <th>Price range</th>
+      <th>Price GC</th>
+      <th>Price A</th>
+      <th>Price B</th>
+      <th>Price C</th>
+      <th>Price D</th>
       <th>Event description</th>
       <th>Event date</th>
       <th>Event ID</th>
@@ -18,7 +22,11 @@
     <% events.each do |event| %>
       <tr>
         <td><%= event.artist %></td>
-        <td><%= event.price_D.to_s + " - " + event.price_GC.to_s %></td>
+        <td><%= event.price_GC %></td>
+        <td><%= event.price_A %></td>
+        <td><%= event.price_B %></td>
+        <td><%= event.price_C %></td>
+        <td><%= event.price_D %></td>
         <td><%= event.description %></td>
         <td><%= event.event_date %></td>
         <td><%= event.id %></td>

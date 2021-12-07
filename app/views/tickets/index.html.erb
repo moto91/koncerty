@@ -1,12 +1,12 @@
 <p id="notice"><%= notice %></p>
-
+<div class="section-show-tickets">
 <h1>Tickets</h1>
 
 <table>
   <thead>
     <tr>
       <th>Name</th>
-      <th>Seat id seq:</th>
+      <th>Seat number</th>
       <th>Address</th>
       <th>Price</th>
       <th>Email address</th>
@@ -35,7 +35,7 @@
     <% end %>
   </tbody>
 </table>
-
+</div>
 <br>
 
 <%= link_to 'New ticket', new_ticket_path %>

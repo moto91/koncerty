@@ -9,6 +9,20 @@
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
 <title>Let's rock</title>
+<link href='fullcalendar/main.css' rel='stylesheet' />
+<script src='fullcalendar/main.js'></script>
+<link href='fontawesome/css/all.css' rel='stylesheet'>
+<script href='fontawesome/js/all.js'></script>
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    let calendarEl = document.getElementById('calendar');
+    let calendar = new FullCalendar.Calendar(calendarEl, {
+      events: '/event.json'
+    });
+    calendar.render();
+  });
+
+</script>
 <style type="text/css">
 
   .naglowek {
@@ -19,20 +33,24 @@
     background-position: center;
     background-attachment: fixed;
     min-height: 100vh;
-    padding-left: 50px;
+    padding-left: 5%;
   }
   section {
     padding-top: 10%;
   }
   .navbar {
-    background-color: #f5efdf;
     font-family: Arial;
     font-size: 100%;
     color:rgb(95, 17, 17);
-    padding-right: 80px;
-    position: relative;
-
-
+    padding-left: 25%;
+    padding-top: 10%;
+    position: fixed;
+  }
+  #calendar{
+    font-family: Arial;
+    padding-top: 5%;
+    padding-left: 15%;
+    padding-right: 15%;
   }
 </style>
 </head>
@@ -41,20 +59,23 @@
         <section id="section-top" class="naglowek naglowek-fluid text-white d-flex justify-content-center ">
            <div class="container text-center">
              <h1 style="font-weight: lighter; color:rgb(95, 17, 17); font-family:Arial; font-size:600%; text-align:left">LET'S</h1>
-             <h2 style="font-weight: lighter; color:rgb(95, 17, 17); font-family:Arial; font-size:600%; text-align:left; margin-left: 50px">ROCK</h2>
+             <h2 style="font-weight: lighter; color:rgb(95, 17, 17); font-family:Arial; font-size:600%; text-align:left; margin-left: 10%">ROCK</h2>
            </div>
         <nav class="navbar navbar-expand-lg">
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
               <span class="navbar-toggler-icon"></span>
             </button>
-            <div class="collapse navbar-collapse" id="navbarText">
+            <div class="navbar" id="navbarText">
               <ul class="nav flex-column">
                 <li class="nav-item active">
                     <a class="nav-link" href="index" style="color:rgb(95, 17, 17)">Home</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#" style="color:rgb(95, 17, 17)">About us</a>
+                    <a class="nav-link" href="#section-description" style="color:rgb(95, 17, 17)">About us</a>
                 </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#section-calendar" style="color:rgb(95, 17, 17)">Calendar</a>
+              </li>
                 <li class="nav-item">
                   <a class="nav-link" href="tickets" style="color:rgb(95, 17, 17)">Tickets <span class="sr-only">(current)</span></a>
                 </li>
@@ -62,14 +83,47 @@
                   <a class="nav-link" href="events/index" style="color:rgb(95, 17, 17)">Events</a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link" href="#" style="color:rgb(95, 17, 17)">Contact</a>
+                  <a class="nav-link" href="users/sign_in" style="color:rgb(95, 17, 17)">Login</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#section-contact" style="color:rgb(95, 17, 17)">Contact</a>
                 </li>
               </ul>
             </div>
           </nav>
         </section>
-        </header> 
-        <h3>About us</h3>
-        <p style="color:blue">We are...</p>
+        </header>
+        <div class="description" style="background-color: #f5efdf; padding-left: 14%; padding-right: 14%">
+          <section id="section-description" style="color:rgb(95, 17, 17)">
+            <h3 class="display-4">About us</h3>
+            <p>Rock, classical, film music and many more. You can find tickets for all sorts of events here.</p>
+            <p>You can order personalised tickets. The reservation system is very user friendly. Once you use our website you will only want to buy concert tickets from us.</p>
+          </section>
+          <section id="section-calendar" style="color:rgb(95, 17, 17)">
+            <h3 class="display-4">Upcoming events</h3>
+          <div id="calendar"></div> 
+        </section>
+        <section id="section-contact" style="color:rgb(95, 17, 17); padding-bottom: 10%">
+          <h3 class="display-4">Contact us</h3>
+          <div> <p style="color:rgb(95, 17, 17)"><i class="fa fa-phone" aria-hidden="true"></i>     +48 12 207 19 00</p> <p style="color:rgb(95, 17, 17)"><i class="fa fa-envelope"></i>     hello@letsrock.com</p> <p style="color:rgb(95, 17, 17)"><i class="fa fa-map-marker"></i>     Emilii Plater Street 53, 00-113 Warsaw</p> </div>
+          <p>Fill up the form and our Team will get back to you within 24 hours</p>
+          <div class="col-sm-6 pad">
+            <form class="rounded msg-form">
+                <div class="form-group"> <label for="name" class="h6">Your Name</label>
+                    <div class="input-group border rounded">
+                        <div class="input-group-addon px-2 pt-1">
+                            <p class="fa fa-user"></p>
+                        </div> <input type="text" class="form-control border-0 bg-transparent">
+                    </div>
+                </div>
+                <div class="form-group"> <label for="name" class="h6">Email</label>
+                    <div class="input-group border rounded">
+                        <div class="input-group-addon px-2 pt-1"> <i class="fa fa-envelope"></i> </div> <input type="text" class="form-control border-0 bg-transparent">
+                    </div>
+                </div>
+                <div class="form-group"> <label for="msg" class="h6">Message</label> <textarea name="message" id="msgus" cols="10" rows="5" class="form-control bg-light bg-transparent" placeholder="Message"></textarea> </div>
+                <div class="form-group d-flex justify-content-end"> <input type="submit" class="btn btn-primary btn-dark text-white" value="Send message"> </div>
+        </section>
+        </div>
 </body>
 </html>

@@ -1,7 +1,14 @@
 <h1>All events</h1>
 <ul>
+<div class="all_events">
+<div class "table">
 <% for event in @events %>
 <li><%= link_to event.artist, "/events/#{event.id}" %></li>
 <% end %>
-</ul>
+</div>
+<div class="picture">
+<%= image_tag('koncert.jpg') %>
+</div>
+</div>
 <%= link_to 'New event', events_new_path %>
+

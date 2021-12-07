@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_08_17_124319) do
+ActiveRecord::Schema.define(version: 2021_09_22_210534) do
 
   create_table "events", force: :cascade do |t|
     t.string "artist"
@@ -18,11 +18,11 @@ ActiveRecord::Schema.define(version: 2021_08_17_124319) do
     t.date "event_date"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.decimal "price_A", default: "1.0"
-    t.decimal "price_B", default: "1.0"
-    t.decimal "price_C", default: "1.0"
-    t.decimal "price_D", default: "1.0"
-    t.decimal "price_GC", default: "1.0"
+    t.decimal "price_A"
+    t.decimal "price_B"
+    t.decimal "price_C"
+    t.decimal "price_D"
+    t.decimal "price_GC"
   end
 
   create_table "seats", force: :cascade do |t|

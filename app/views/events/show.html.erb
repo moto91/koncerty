@@ -1,12 +1,33 @@
 <p id="komunikat"><%= flash[:komunikat] %></p>
+
+<div class="show">
+<div class="details">
+<h6>Event details</h6>
+<div class="event_details">
 <p>
   <strong>Artist:</strong>
   <%= @event.artist %>
 </p>
 
 <p>
-  <strong>Price range</strong>
-  <%= @event.price_D.to_s + " - " + @event.price_GC.to_s %>
+  <strong>Price GC:</strong>
+  <%= @event.price_GC %>
+</p>
+<p>
+  <strong>Price A:</strong>
+  <%= @event.price_A %>
+</p>
+<p>
+  <strong>Price B:</strong>
+  <%= @event.price_B %>
+</p>
+<p>
+  <strong>Price C:</strong>
+  <%= @event.price_C %>
+</p>
+<p>
+  <strong>Price D:</strong>
+  <%= @event.price_D %>
 </p>
 
 <p>
@@ -18,8 +39,39 @@
   <strong>Event date:</strong>
   <%= @event.event_date %>
 </p>
-
+</div>
 <%=render "new_ticket", ticket: current_user.tickets.new( :event_id=>@event.id) %>
+</div>
+<div class="venue_map">
+<%= render 'tickets/mapka' %>
+</div>
+</div>
+<div class="section-show">
+<div class="container3">
+<div class="A">
+<span class="tooltiptext">A</span>
+</div>
+<div class="sectorA"><p>- Price A</p></div>
+<div class="B">
+<span class="tooltiptext">B</span>
+</div>
+<div class="sectorB"><p>- Price B</p></div>
+<div class="C">
+<span class="tooltiptext">C</span>
+</div>
+<div class="sectorC"><p>- Price C</p></div>
+<div class="D">
+<span class="tooltiptext">D</span>
+</div>
+<div class="sectorD"><p>- Price D</p></div>
+<div class="G">
+<span class="tooltiptext">G</span>
+</div>
+<div class="sectorG"><p>- Price GC</p></div>
+</div>
+<div class="show_list">
 <%= render "tickets_list", tickets: Ticket.where(event_id: @event.id) %>
+</div>
+</div>
 
-<button type="button" class="btn btn-primary"><%= link_to 'Back', events_index_path %></button>
+<%= link_to 'Back', events_index_path %>
